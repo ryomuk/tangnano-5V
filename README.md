@@ -3,7 +3,7 @@
 
 This document is written mostly in Japanese. If necessary, please use a translation service such as DeepL (I recommend this) or Google.
 
-## 概要
+# 概要
 Tang Nano 20Kを5V系の回路に接続するためのインターフェースです．
 (9K用は現在(2023/6/16)作成中．)
 
