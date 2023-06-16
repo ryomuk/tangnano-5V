@@ -14,18 +14,17 @@ Tang Nano 20Kを5V系の回路に接続するためのインターフェース�
 ## BOM
 |Reference          |Qty| Value          |Size |Memo |
 |-------------------|---|----------------|-----|-----|
-|C1, C2, C3, C4, C5 |5	|0.1uF	         |0603(inch)(1608 (mm))| |
+|C1, C2, C3, C4, C5 |5	|0.1uF	         |1608(mm)(0603(inch))| |
 |J1, J2	            |2	|pin socket      |1x20 |for Tang Nano 20K|
 |J3, J4             |2	|pin header      |1x20 |for 5V GPIO|
 |U1, U2, U3, U4, U5 |5	|SN74CB3T3245PW  |TSSOP| |
 
 
 ## 画像
-![](images/pcb.jpg)
-![](images/3D-20k_1.png)
-![](images/3D-20k_2.png)
-![](images/3D-20k_3.png)
-
+![](images/pcb.png)
+![](images/3D_20k_1.png)
+![](images/3D_20k_2.png)
+![](images/3D_20k_3.png)
 
 ## 参考文献，データシート等
 - [SN74CB3T3245 Data sheet](https://www.ti.com/lit/ds/symlink/sn74cb3t3245.pdf)
