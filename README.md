@@ -7,7 +7,7 @@ This document is written mostly in Japanese. If necessary, please use a translat
 Tang Nano 20Kを5V系の回路に接続するためのインターフェースです．
 (9K用は現在(2023/6/16)作成中．)
 
-## Tang Nano 20K 版(rev.1.1)
+# Tang Nano 20K 版(rev.1.1)
 ## 機能
 - Tang Nanoの20KのGPIO(全34本)を，SN74CB3T3245(レベルシフタ搭載バススイッチ)を介して5V系(TTL, CMOS)に接続します．
 - バッファではなくスイッチで行なっているため，特に信号方向を意識することなく双方向接続が可能です．
