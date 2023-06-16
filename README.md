@@ -1,5 +1,5 @@
 # tangnano-5V
-5V tolerant interface for Tang Nano 20K and 9K
+5V tolerant interface for Tang Nano 20K (and 9K(TBA))
 
 This document is written mostly in Japanese. If necessary, please use a translation service such as DeepL (I recommend this) or Google.
 
@@ -7,12 +7,22 @@ This document is written mostly in Japanese. If necessary, please use a translat
 Tang Nano 20Kを5V系の回路に接続するためのインターフェースです．
 (9K用は現在(2023/6/16)作成中．)
 
+## Tang Nano 20K 版(rev.1.1)
+## 機能
+- Tang Nanoの20KのGPIO(全34本)を，SN74CB3T3245(レベルシフタ搭載バススイッチ)を介して5V系(TTL, CMOS)に接続します．
+- バッファではなくスイッチで行なっているため，特に信号方向を意識することなく双方向接続が可能です．
+
+## 原理
+- 5V→3.3VはSN74CB3T3245によって5V系から3.3V系にレベル変換されます．
+- 3.3V→5Vはレベル変換は行なわれず，3.3V系の信号が出力されますが，5VTTLの閾値は1.5V，5VCMOSの閾値は2.5Vなので問題無いということのようです．
 
 ## 注意事項
 - 動作検証はピンヘッダの間隔が異なるバージョン(20K/rev1.0, 回路は20K/rev1.1と同一)で実施しています．
 - このレポジトリにある版(20K/rev1.1)は現時点(2023/6/16)においてまだ基板注文中なので，このガーバーで作成したボードそのものは未確認です．
 
-## Tang Nano 20K 版(rev.1.1)
+## Tang Nano 20Kの75番ピンについて
+- Tang Nano 20K(v3921)の75番ピンは，C51(100nF)でGNDに接続されているため，そのままだと低速(数十KHz)でしか動作しません．他のピンと同様に使用するためにはC51を外す必要があります．
+
 ### BOM
 |Reference          |Qty| Value          |Size |Memo |
 |-------------------|---|----------------|-----|-----|
