@@ -5,7 +5,7 @@ This document is written mostly in Japanese. If necessary, please use a translat
 
 # 概要
 Tang Nano 20Kを5V系の回路に接続するためのインターフェースです．
-(9K用は現在(2023/6/16)作成中．)
+(9K用は現在作成中．)
 
 # Tang Nano 20K 版(rev.1.1)
 ## 機能
@@ -23,11 +23,7 @@ Tang Nano 20Kを5V系の回路に接続するためのインターフェース�
 - データシートによると遅延はmax 0.25nsで，手元のオシロでは測定限界以下でした．
 
 ## Tang Nano 20Kの75番ピンについて
-- Tang Nano 20K(v3921)の75番ピンは，C51(100nF)でGNDに接続されているため，そのままだと低速(数十KHz)でしか動作しません．他のピンと同様に使用するためにはC51を外す必要があります．
-
-## 注意事項
-- 現時点(2023/6/16)において，動作検証はピンヘッダの間隔が異なるバージョン(20K/rev1.0, 回路は20K/rev1.1と同一)で実施しています．
-- このレポジトリにある版(20K/rev1.1)はまだ基板注文中なので，このガーバーで作成したボードそのものは未確認です．(確認でき次第情報を更新します．)
+- Tang Nano 20K(v3921)の75番ピンは，C51(100nF)でGNDに接続されているため，そのままだと低速(数十KHz)でしか動作しません．他のピンと同様に使用するためにはC51を外す必要があります．低速動作で構わないのであれば気にしなくていいです．
 
 ## BOM
 |Reference          |Qty| Value          |Size |Memo |
@@ -37,11 +33,26 @@ Tang Nano 20Kを5V系の回路に接続するためのインターフェース�
 |J3, J4             |2	|pin header      |1x20 |for 5V GPIO|
 |U1, U2, U3, U4, U5 |5	|SN74CB3T3245PW  |TSSOP| |
 
-### 画像
+## 画像
 ![](images/pcb.png)
 ![](images/3D_20k_1.png)
 ![](images/3D_20k_2.png)
 ![](images/3D_20k_3.png)
+![](images/actual_board.jpg)
+
+# 応用例
+## TangNanoZ80MEM (Applications/TangNanoZ80MEM)
+- Z80用のメモリシステムとクロック回路です．
+- クロックはTTLレベルではなくHでVcc-0.6Vのレベルが必要なので外付けのICで引き上げています．4MHz程度であれば330Ωプルアップ抵抗だけでも動きました．
+- 75番ピンはRESET_nに割り当てたのでC51を外さなくても動作します．
+- Z84C0020で今のところ12MHzで動作しています．
+TangNano20Kの性能からすると，20MHzでも動くような気がするのですが，今の実装だと13.5MHzだと動作しません．
+- uart.vの113行目あたりに，
+  rx_data <= 8'h55; // for debug, can be omitted(?)"
+という行があります．これはデバッグ用なのですが，これを外すとなぜかキー入力時にエラー発生頻度が増えるので入れてあります．他にもいろいろバグがあると思います．
+
+ASCIIART.BAS実行結果 (12MHz)
+![](images/asciiart_12MHz.png)
 
 ## 参考文献，データシート等
 - [SN74CB3T3245 Data sheet](https://www.ti.com/lit/ds/symlink/sn74cb3t3245.pdf)
@@ -51,3 +62,4 @@ Tang Nano 20Kを5V系の回路に接続するためのインターフェース�
 
 ## 更新履歴
 - 2023/6/16: 初版公開 (Tang Nano 20K用 rev.1.1)
+- 2023/6/25: 応用例(TangNanoZ80MEM を追加)
