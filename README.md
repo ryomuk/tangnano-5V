@@ -44,8 +44,7 @@ Tang Nano 20Kを5V系の回路に接続するためのインターフェース�
 ## TangNanoZ80MEM (Applications/TangNanoZ80MEM)
 - Z80用のメモリシステムとクロック回路です．
 - クロックはTTLレベルではなくHでVcc-0.6Vのレベルが必要なので外付けのICで引き上げています．4MHz程度であれば330Ωプルアップ抵抗だけでも動きました．
-- Z84C0020で今のところ12MHzで動作しています．
-TangNano20Kの性能からすると，20MHzでも動くような気がするのですが，今の実装だと13.5MHzだと動作しません．
+- Z84C0020，ブレッドボードで20.25MHzで動作しました．(ただUARTが文字化けすることがあります．
 - uart.vの113行目あたりに，
   "rx_data <= 8'h55; // for debug, can be omitted(?)"
 という行があります．これはデバッグ用なのですが，これを外すとなぜかキー入力時にエラー発生頻度が増えるので入れてあります．他にもいろいろバグがあると思います．
@@ -53,9 +52,11 @@ TangNano20Kの性能からすると，20MHzでも動くような気がするの�
 - DBG_TRGとLED_RGBはデバッグ用の信号です．
 - 75番ピンはRESET_nに割り当てたのでC51を外さなくても動作します．
 
-
 ASCIIART.BAS実行結果 (12MHz)
 ![](images/asciiart_12MHz.png)
+
+ASCIIART.BAS実行結果 (20.25MHz)
+![](images/asciiart_20.25MHz.png)
 
 ## 参考文献，データシート等
 - [SN74CB3T3245 Data sheet](https://www.ti.com/lit/ds/symlink/sn74cb3t3245.pdf)
@@ -66,3 +67,4 @@ ASCIIART.BAS実行結果 (12MHz)
 ## 更新履歴
 - 2023/6/16: 初版公開 (Tang Nano 20K用 rev.1.1)
 - 2023/6/25: 応用例(TangNanoZ80MEM を追加)
+- 2023/6/26: TangNanoZ80MEMのピン配置を変更．(rev1.0→rev.1.1)

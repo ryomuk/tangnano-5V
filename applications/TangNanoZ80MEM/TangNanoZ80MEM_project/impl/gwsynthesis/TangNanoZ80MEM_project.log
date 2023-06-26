@@ -14,6 +14,7 @@ Compiling module 'uart_rx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA
 Compiling module 'uart_tx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":6)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw2 is unused("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":12)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed

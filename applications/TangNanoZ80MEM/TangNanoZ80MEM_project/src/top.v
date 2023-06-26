@@ -33,13 +33,13 @@ module top(
 
   parameter	 SYSCLK_FRQ  = 27_000_000; //Hz
 
-  parameter	 Z80CLK_FRQ  =  2_250_000; //Hz
+//  parameter	 Z80CLK_FRQ  =  2_250_000; //Hz
 //  parameter	 Z80CLK_FRQ  =  2_700_000; //Hz
 //  parameter	 Z80CLK_FRQ  =  3_375_000; //Hz
 //  parameter	 Z80CLK_FRQ  =  4_500_000; //Hz
 //  parameter	 Z80CLK_FRQ  =  6_750_000; //Hz
 //  parameter	 Z80CLK_FRQ  =  9_000_000; //Hz
-//  parameter	 Z80CLK_FRQ  = 13_500_000; //Hz
+  parameter	 Z80CLK_FRQ  = 13_500_000; //Hz
 
     parameter	 UART_BPS    =     115200; //Hz
 //  parameter	 UART_BPS    =      38400; //Hz
@@ -77,7 +77,7 @@ module top(
 //  assign DBG_TRG = rx_data_ready;
 //  assign DBG_TRG = (address == 16'h006C & ~M1_n);
 //  assign DBG_TRG = ~M1_n & ~IORQ_n;
-  assign DBG_TRG = (~sw2) ? uart_rx: rx_data_ready;
+  assign DBG_TRG = D == 8'h6C;
 
 //  assign LED_RGB = (~sw2) ? uart_rx : rx_data_ready;
   ws2812 onboard_rgb_led(.clk(sys_clk), .we(1'b1), .sout(LED_RGB),

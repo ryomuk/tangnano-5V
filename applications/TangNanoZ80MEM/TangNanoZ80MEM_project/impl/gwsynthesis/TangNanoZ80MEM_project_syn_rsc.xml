@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="31" Alu="7" Lut="53" Bsram="32">
-    <SubModule name="onboard_rgb_led" Register="45" Lut="90"/>
+<Module name="top" Register="31" Alu="7" Lut="55" Bsram="32">
+    <SubModule name="onboard_rgb_led" Register="45" Lut="98"/>
     <SubModule name="PLL"/>
     <SubModule name="uart_rx_inst" Register="39" Lut="68"/>
-    <SubModule name="uart_tx_inst" Register="32" Lut="54"/>
+    <SubModule name="uart_tx_inst" Register="32" Lut="53"/>
 </Module>
