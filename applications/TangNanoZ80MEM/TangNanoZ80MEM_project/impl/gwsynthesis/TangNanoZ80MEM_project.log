@@ -2,16 +2,17 @@ GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\gowin_rpll\gowin_rpll.v'
 Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'
-Analyzing included file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\rom.v'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":98)
-Back to file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":98)
+Analyzing included file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\rom.v'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":97)
+Back to file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":97)
 Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v'
+Undeclared symbol 'rx_negedge', assumed default net type 'wire'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":93)
 Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\ws2812.v'
 Compiling module 'top'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":10)
-Extracting RAM for identifier 'mem'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":54)
+Extracting RAM for identifier 'mem'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":55)
 Compiling module 'ws2812'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\ws2812.v":5)
 Compiling module 'Gowin_rPLL'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\gowin_rpll\gowin_rpll.v":10)
-Compiling module 'uart_rx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":68)
-Compiling module 'uart_tx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":6)
+Compiling module 'uart_rx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":63)
+Compiling module 'uart_tx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":7)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input sw2 is unused("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":12)

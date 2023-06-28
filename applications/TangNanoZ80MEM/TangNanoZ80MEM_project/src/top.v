@@ -49,6 +49,7 @@ module top(
 
 // Int Vector for UART receive (hard coding)
   parameter	 IVECTOR_UART_RECV = 8'h6C; // SBC Z80 Grant BASIC
+//  parameter	 IVECTOR_UART_RECV = 8'h3C; // SBC Z80 PaloAlot BASIC
 //  parameter	 IVECTOR_UART_RECV = 8'hFF; // SBC8080
 
   reg [7:0]	 mem[65535:0];
@@ -66,7 +67,7 @@ module top(
   wire [7:0]	 rx_data;
   wire		 rx_data_ready;
   reg		 rx_clear;
-
+  
 //---------------------------------------------------------------------------
 // for debug
 //---------------------------------------------------------------------------
@@ -76,10 +77,8 @@ module top(
   
 //  assign DBG_TRG = rx_data_ready;
 //  assign DBG_TRG = (address == 16'h006C & ~M1_n);
-//  assign DBG_TRG = ~M1_n & ~IORQ_n;
-  assign DBG_TRG = D == 8'h6C;
-
-//  assign LED_RGB = (~sw2) ? uart_rx : rx_data_ready;
+  assign DBG_TRG = uart_rx;
+//  assign LED_RGB = uart_rx;
   ws2812 onboard_rgb_led(.clk(sys_clk), .we(1'b1), .sout(LED_RGB),
 			 .r(LED_R), .g(LED_G), .b(LED_B));
 
@@ -109,6 +108,7 @@ module top(
 		 .clkout(CLK), //output clkout
 		 .clkin(sys_clk) //input clkin
 		 );
+//  assign CLK = sys_clk; // for 27MHz
 `else
   reg [7:0]	 clk_cnt = 0;
   always @(posedge sys_clk)
@@ -216,6 +216,8 @@ module top(
        .rx_data_ready (rx_data_ready),
        .rx_clear      (rx_clear),
        .rx_pin        (uart_rx      )
+//       .rx_error_missing_stopbit    (rx_error_missing_stopbit),
+//       .rx_error_start_before_read  (rx_error_start_before_read)
        );
 
   uart_tx#
