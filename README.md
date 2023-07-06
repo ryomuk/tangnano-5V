@@ -48,7 +48,7 @@ Tang Nano 20Kを5V系の回路に接続するためのインターフェース�
 - Z80のVccをTangNano側のVCC(USB給電)と別にしたいこともあるかもしれないので，ピンヘッダで接続するようにしています．
 - DBG_TRGとLED_RGBはデバッグ用の信号です．
 - 75番ピンはRESET_nに割り当てたのでC51を外さなくても動作します．
-- PCB版で27MHz(USB給電，Vcc=4.94V), 33MHz(Z80のVcc=6.0V)で動作しました．
+- PCB版で27MHz(USB給電，Vcc=4.94V), 33MHz(Z80はTangNanoと別給電, Vcc=6.0V)で動作しました．(2023/7/6追記)
 
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 ![](images/asciiart_33MHz_6V.jpg)
@@ -64,4 +64,4 @@ ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 - 2023/6/25: 応用例(TangNanoZ80MEM を追加)
 - 2023/6/26: TangNanoZ80MEMのピン配置を変更．(rev1.0→rev.1.1)
 - 2023/6/28: TangNanoZ80MEMの uart.vを更新．
-- 2023/7/06: TangNanoZ80MEMを修正．27MHz(Vcc=5.0V), 31.5MHz(Vcc=5.6V)で動作．
+- 2023/7/06: TangNanoZ80MEMを修正．27MHz(Vcc=5.0V), 33MHz(Vcc=6.0V)で動作．
