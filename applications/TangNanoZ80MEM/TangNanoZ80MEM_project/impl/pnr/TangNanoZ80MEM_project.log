@@ -7,12 +7,15 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
+WARN  (TA1117) : Can't calculate clocks' relationship between: "IORQ_n" and "PLL/rpll_inst/CLKOUT.default_gen_clk"
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
 [70%] Routing Phase 1 completed
 [80%] Routing Phase 2 completed
 WARN  (PR1014) : Generic routing resource will be used to clock signal 'sys_clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'MREQ_n_d' by the specified constraint. And then it may lead to the excessive delay or skew
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'IORQ_n_d' by the specified constraint. And then it may lead to the excessive delay or skew
 [90%] Routing Phase 3 completed
 Running timing analysis......
 [95%] Timing analysis completed
@@ -26,5 +29,5 @@ Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_proj
 Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\pnr\TangNanoZ80MEM_project.rpt.html" completed
 Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\pnr\TangNanoZ80MEM_project.rpt.txt" completed
 Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\pnr\TangNanoZ80MEM_project.tr.html" completed
-Wed Jun 28 13:11:18 2023
+Thu Jul 06 11:31:07 2023
 

@@ -3,21 +3,20 @@
 // Memory System for Z80 using Tang Nano 20K
 //
 // by Ryo Mukai
-// 2023/6/24
+// 2023/7/6
 //---------------------------------------------------------------------------
 
-`define USE_PLL
+`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
+//`define USE_SYS_CLK  // CLK = sys_clk (27MHz)
+//`define USE_DIV_CLK  // CLK = divided sys_clk (defined by Z80CLK_FRQ)
+
 module top(
     input	 sw1,
     input	 sw2,
     input	 sys_clk, // 27MHz system clock
     input	 uart_rx,
     output	 uart_tx,
-`ifdef USE_PLL
-    output	 CLK, // clock for Z80 (PLL)
-`else
-    output reg	 CLK, // clock for Z80 (non PLL)
-`endif
+    output	 CLK,
     output reg	 RESET_n,
     output	 INT_n,
     input	 M1_n,
@@ -33,16 +32,14 @@ module top(
 
   parameter	 SYSCLK_FRQ  = 27_000_000; //Hz
 
-//  parameter	 Z80CLK_FRQ  =  2_250_000; //Hz
-//  parameter	 Z80CLK_FRQ  =  2_700_000; //Hz
-//  parameter	 Z80CLK_FRQ  =  3_375_000; //Hz
+`ifdef USE_DIV_CLK
 //  parameter	 Z80CLK_FRQ  =  4_500_000; //Hz
 //  parameter	 Z80CLK_FRQ  =  6_750_000; //Hz
 //  parameter	 Z80CLK_FRQ  =  9_000_000; //Hz
   parameter	 Z80CLK_FRQ  = 13_500_000; //Hz
-
+`endif
+  
     parameter	 UART_BPS    =     115200; //Hz
-//  parameter	 UART_BPS    =      38400; //Hz
 //  parameter	 UART_BPS    =       9600; //Hz
   parameter	 IOADDR_UART_DATA = 8'h00;
   parameter	 IOADDR_UART_CTRL = 8'h01;
@@ -53,10 +50,9 @@ module top(
 //  parameter	 IVECTOR_UART_RECV = 8'hFF; // SBC8080
 
   reg [7:0]	 mem[65535:0];
-  reg [7:0]	 mem_data;
   reg [7:0]	 io_data;
-  wire [15:0]	 address = A;
-  wire [7:0]	 address_io = A[7:0];
+  reg [15:0]	 address; // address or data of memory should be latched to infer BSRAM
+  reg [7:0]	 address_io;
 
   wire [7:0]	 int_vector;
     
@@ -76,11 +72,10 @@ module top(
   reg [7:0]		LED_B;
   
 //  assign DBG_TRG = rx_data_ready;
-//  assign DBG_TRG = (address == 16'h006C & ~M1_n);
-  assign DBG_TRG = uart_rx;
-//  assign LED_RGB = uart_rx;
-  ws2812 onboard_rgb_led(.clk(sys_clk), .we(1'b1), .sout(LED_RGB),
-			 .r(LED_R), .g(LED_G), .b(LED_B));
+  assign DBG_TRG = ((address == 16'h0073) & (~M1_n | sw2));
+  assign LED_RGB = ~M1_n & ~IORQ_n;
+//  ws2812 onboard_rgb_led(.clk(sys_clk), .we(1'b1), .sout(LED_RGB),
+//			 .r(LED_R), .g(LED_G), .b(LED_B));
 
   always @(posedge CLK)
     if(~RESET_n)
@@ -102,18 +97,24 @@ module top(
 //---------------------------------------------------------------------------
 // clock for Z80
 //---------------------------------------------------------------------------
-
-`ifdef USE_PLL
+`ifdef USE_PLL_CLK
   Gowin_rPLL PLL(
 		 .clkout(CLK), //output clkout
 		 .clkin(sys_clk) //input clkin
 		 );
-//  assign CLK = sys_clk; // for 27MHz
-`else
+`endif
+
+`ifdef USE_SYS_CLK
+  assign CLK = sys_clk; 
+`endif
+
+`ifdef USE_DIV_CLK
   reg [7:0]	 clk_cnt = 0;
+  reg		 CLK_div;
+  assign CLK = CLK_div; 
   always @(posedge sys_clk)
     if(clk_cnt == ((SYSCLK_FRQ / Z80CLK_FRQ)/2 - 1)) begin
-       CLK = ~CLK;
+       CLK_div = ~CLK_div;
        clk_cnt <= 0;
     end
     else
@@ -139,28 +140,34 @@ module top(
 //---------------------------------------------------------------------------
 // Memory and IO
 //---------------------------------------------------------------------------
-  assign D = (~RD_n & ~MREQ_n) ? mem_data :
-	     (~M1_n & ~IORQ_n) ? int_vector   :
-	     (~RD_n & ~IORQ_n) ? io_data      :
+  assign D = (~M1_n & ~IORQ_n) ? int_vector   :
+	     (~MREQ_n & ~RD_n) ? mem[address] :
+	     (~IORQ_n & ~RD_n) ? io_data      :
 	     8'bzzzz_zzzz;
   
 //---------------------------------------------------------------------------
 // Memory
 //---------------------------------------------------------------------------
- always @(posedge CLK)
-   if(~MREQ_n & ~RD_n) begin
-      mem_data <= mem[address];
-   end
-  always @(posedge CLK)
-     if(~MREQ_n & ~WR_n)
-       if(address[15] == 1'b1) begin // 0000H to 7FFFH is ROM
-	  mem[address] <= D;
+// always @(posedge CLK)
+//  always @(posedge CLK or negedge CLK)
+//    if(~MREQ_n)
+//      address <= A;
+  always @(negedge MREQ_n)
+    address <= A;
+
+  wire write_memory = (~MREQ_n & ~WR_n);
+  always @(negedge write_memory)
+    if(address[15] == 1'b1) begin // 0000H to 7FFFH is ROM
+       mem[address] <= D;
 //	  DBG_TRG = ~DBG_TRG;
-       end
+    end
   
 //---------------------------------------------------------------------------
 // I/O
 //---------------------------------------------------------------------------
+  always @(negedge IORQ_n)
+    address_io <= A[7:0];
+
   // UART SEND
   always @(posedge CLK)
     if(~IORQ_n & ~WR_n & address_io == IOADDR_UART_DATA) begin
@@ -192,13 +199,6 @@ module top(
 //---------------------------------------------------------------------------
   assign int_vector = IVECTOR_UART_RECV;
 
-// Set and Reset INT_n
-//  UART_int UART_int_module(.clk(CLK),
-//			   .reset_n(RESET_n),
-//			   .set(rx_data_ready), 
-//			   .clear(~M1_n & ~IORQ_n),
-//			   .int_n(INT_n));
-
   assign INT_n = ~rx_data_ready;
 //---------------------------------------------------------------------------
 // UART
@@ -216,8 +216,6 @@ module top(
        .rx_data_ready (rx_data_ready),
        .rx_clear      (rx_clear),
        .rx_pin        (uart_rx      )
-//       .rx_error_missing_stopbit    (rx_error_missing_stopbit),
-//       .rx_error_start_before_read  (rx_error_start_before_read)
        );
 
   uart_tx#
@@ -236,37 +234,3 @@ module top(
 
 endmodule
 
-//module UART_int(
-//		input	   clk,
-//		input	   reset_n,
-//		input	   set,
-//		input	   clear,
-//		output reg int_n
-//		);
-//  localparam		   S_WAIT_FOR_START  = 0;
-//  localparam		   S_WAIT_FOR_SET    = 1;
-//  localparam		   S_WAIT_FOR_CLEAR  = 2;
-//
-//  reg	[1:0]		   state;
-//  always @(posedge clk)
-//    if(~reset_n) begin
-//       state <= S_WAIT_FOR_START;
-//       int_n <= 1'b1;
-//    end
-//    else
-//      case (state)
-//	S_WAIT_FOR_START:
-//	  if(~set)
-//	    state <= S_WAIT_FOR_SET;
-//	S_WAIT_FOR_SET:
-//	  if(set) begin
-//	     int_n <= 1'b0;
-//	     state <= S_WAIT_FOR_CLEAR;
-//	  end
-//	S_WAIT_FOR_CLEAR:
-//	  if(clear) begin
-//	     int_n <= 1'b1;
-//	     state <= S_WAIT_FOR_START;
-//	  end
-//      endcase
-//endmodule
