@@ -1,0 +1,5 @@
+#,Reference,Qty,Value,
+1,"C1, C2, C3, C4, C5",5,0.1uF,0603(inch)(1608 (mm))
+2,"J1, J2",2,1x20 pin socket for Tang Nano 20K,
+3,"J3, J4",2,1x20 pin header for 5V GPIO,
+4,"U1, U2, U3, U4, U5",5,SN74CB3T3245PW,

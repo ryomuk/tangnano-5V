@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>D:\wks\ework\KiCad\TangNano5V\rev1.1_ordered\TangNano5V.kicad_sch</source>
+    <date>2023/06/16 15:43:57</date>
+    <tool>Eeschema 7.0.2</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>5V interface for TangNano 20K</title>
+        <company>Ryo Mukai</company>
+        <rev>1.1</rev>
+        <date>2023-06-15</date>
+        <source>TangNano5V.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>0.1uF</value>
+      <footprint>000_MyFootprint:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <libsource lib="000_MyLibrary" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0a398116-8c19-4434-bea3-86f76891d47f</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>0.1uF</value>
+      <footprint>000_MyFootprint:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <libsource lib="000_MyLibrary" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>66368981-b93c-4ae7-8d9e-963667c79468</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>0.1uF</value>
+      <footprint>000_MyFootprint:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <libsource lib="000_MyLibrary" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5de19d2a-5bea-46a7-a16a-4e2f281a5a77</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>0.1uF</value>
+      <footprint>000_MyFootprint:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <libsource lib="000_MyLibrary" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>063197a7-15c6-429f-b17d-cdf03c8bef68</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>0.1uF</value>
+      <footprint>000_MyFootprint:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder</footprint>
+      <libsource lib="000_MyLibrary" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a24630ad-2d9a-46e7-9895-58297855b1b2</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>TangNano20K</value>
+      <footprint>000_MyFootprint:PinSocket_1x20_P2.54mm_Vertical</footprint>
+      <libsource lib="000_MyLibrary" part="Conn_01x20" description="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>51c92499-93d0-44d9-9fb3-05277fdfa30d</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>TangNano20K</value>
+      <footprint>000_MyFootprint:PinSocket_1x20_P2.54mm_Vertical</footprint>
+      <libsource lib="000_MyLibrary" part="Conn_01x20" description="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>540c6daf-bbce-481e-a62c-44cb68932481</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>5V interface</value>
+      <footprint>000_MyFootprint:PinHeader_1x20_P2.54mm_Vertical</footprint>
+      <libsource lib="000_MyLibrary" part="Conn_01x20" description="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>023bc995-b9b4-4b05-a981-59cd98389ca0</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>5V interface</value>
+      <footprint>000_MyFootprint:PinHeader_1x20_P2.54mm_Vertical</footprint>
+      <libsource lib="000_MyLibrary" part="Conn_01x20" description="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>65230835-a2e3-4bf7-b013-af165e0e08e4</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>74CB3T3245</value>
+      <footprint>000_MyFootprint:PW20</footprint>
+      <datasheet>SN74CB3T3245PW</datasheet>
+      <libsource lib="000_MyLibrary" part="SN74CB3T3245PW" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_keywords" value="SN74CB3T3245DW"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a04a6882-974d-4006-a414-9a840855fc1e</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>74CB3T3245</value>
+      <footprint>000_MyFootprint:PW20</footprint>
+      <datasheet>SN74CB3T3245PW</datasheet>
+      <libsource lib="000_MyLibrary" part="SN74CB3T3245PW" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_keywords" value="SN74CB3T3245DW"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>039b4f37-9429-4d07-85c1-f52f357deedb</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>74CB3T3245</value>
+      <footprint>000_MyFootprint:PW20</footprint>
+      <datasheet>SN74CB3T3245PW</datasheet>
+      <libsource lib="000_MyLibrary" part="SN74CB3T3245PW" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_keywords" value="SN74CB3T3245DW"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b50096f9-abe2-48f4-a3d0-dbf48f832a76</tstamps>
+    </comp>
+    <comp ref="U4">
+      <value>74CB3T3245</value>
+      <footprint>000_MyFootprint:PW20</footprint>
+      <datasheet>SN74CB3T3245PW</datasheet>
+      <libsource lib="000_MyLibrary" part="SN74CB3T3245PW" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_keywords" value="SN74CB3T3245DW"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fdf3fd98-1287-4aaa-92aa-704b6a20d67f</tstamps>
+    </comp>
+    <comp ref="U5">
+      <value>74CB3T3245</value>
+      <footprint>000_MyFootprint:PW20</footprint>
+      <datasheet>SN74CB3T3245PW</datasheet>
+      <libsource lib="000_MyLibrary" part="SN74CB3T3245PW" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="TangNano5V.kicad_sch"/>
+      <property name="ki_keywords" value="SN74CB3T3245DW"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fa2e3f82-ae35-44ac-9114-7ebd3718c7ef</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="000_MyLibrary" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="000_MyLibrary" part="Conn_01x20">
+      <description>Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x20</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+        <pin num="15" name="Pin_15" type="passive"/>
+        <pin num="16" name="Pin_16" type="passive"/>
+        <pin num="17" name="Pin_17" type="passive"/>
+        <pin num="18" name="Pin_18" type="passive"/>
+        <pin num="19" name="Pin_19" type="passive"/>
+        <pin num="20" name="Pin_20" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="000_MyLibrary" part="SN74CB3T3245PW">
+      <docs>SN74CB3T3245PW</docs>
+      <footprints>
+        <fp>DW20</fp>
+        <fp>DW20-M</fp>
+        <fp>DW20-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74CB3T3245PW</field>
+        <field name="Footprint">000_MyFootprint:PW20</field>
+        <field name="Datasheet">SN74CB3T3245PW</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="unspecified"/>
+        <pin num="2" name="A1" type="bidirectional"/>
+        <pin num="3" name="A2" type="bidirectional"/>
+        <pin num="4" name="A3" type="bidirectional"/>
+        <pin num="5" name="A4" type="bidirectional"/>
+        <pin num="6" name="A5" type="bidirectional"/>
+        <pin num="7" name="A6" type="bidirectional"/>
+        <pin num="8" name="A7" type="bidirectional"/>
+        <pin num="9" name="A8" type="bidirectional"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="B8" type="bidirectional"/>
+        <pin num="12" name="B7" type="bidirectional"/>
+        <pin num="13" name="B6" type="bidirectional"/>
+        <pin num="14" name="B5" type="bidirectional"/>
+        <pin num="15" name="B4" type="bidirectional"/>
+        <pin num="16" name="B3" type="bidirectional"/>
+        <pin num="17" name="B2" type="bidirectional"/>
+        <pin num="18" name="B1" type="bidirectional"/>
+        <pin num="19" name="*OE" type="input"/>
+        <pin num="20" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="000_MyLibrary">
+      <uri>D:\wks\ework\KiCad\TangNano5V\rev1.1_ordered//mylib/000_MyLibrary.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3.3V">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="J1" pin="19" pinfunction="Pin_19" pintype="passive"/>
+      <node ref="J2" pin="16" pinfunction="Pin_16" pintype="passive"/>
+      <node ref="J3" pin="19" pinfunction="Pin_19" pintype="passive"/>
+      <node ref="J4" pin="16" pinfunction="Pin_16" pintype="passive"/>
+      <node ref="U1" pin="20" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U2" pin="20" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U3" pin="20" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U4" pin="20" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U5" pin="20" pinfunction="VCC" pintype="power_in"/>
+    </net>
+    <net code="2" name="+5V">
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="3" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="J1" pin="20" pinfunction="Pin_20" pintype="passive"/>
+      <node ref="J2" pin="15" pinfunction="Pin_15" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J3" pin="20" pinfunction="Pin_20" pintype="passive"/>
+      <node ref="J4" pin="15" pinfunction="Pin_15" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="19" pinfunction="*OE" pintype="input"/>
+      <node ref="U2" pin="10" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="19" pinfunction="*OE" pintype="input"/>
+      <node ref="U3" pin="10" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="19" pinfunction="*OE" pintype="input"/>
+      <node ref="U4" pin="10" pinfunction="GND" pintype="power_in"/>
+      <node ref="U4" pin="19" pinfunction="*OE" pintype="input"/>
+      <node ref="U5" pin="10" pinfunction="GND" pintype="power_in"/>
+      <node ref="U5" pin="11" pinfunction="B8" pintype="bidirectional"/>
+      <node ref="U5" pin="12" pinfunction="B7" pintype="bidirectional"/>
+      <node ref="U5" pin="13" pinfunction="B6" pintype="bidirectional"/>
+      <node ref="U5" pin="14" pinfunction="B5" pintype="bidirectional"/>
+      <node ref="U5" pin="15" pinfunction="B4" pintype="bidirectional"/>
+      <node ref="U5" pin="16" pinfunction="B3" pintype="bidirectional"/>
+      <node ref="U5" pin="19" pinfunction="*OE" pintype="input"/>
+      <node ref="U5" pin="4" pinfunction="A3" pintype="bidirectional"/>
+      <node ref="U5" pin="5" pinfunction="A4" pintype="bidirectional"/>
+      <node ref="U5" pin="6" pinfunction="A5" pintype="bidirectional"/>
+      <node ref="U5" pin="7" pinfunction="A6" pintype="bidirectional"/>
+      <node ref="U5" pin="8" pinfunction="A7" pintype="bidirectional"/>
+      <node ref="U5" pin="9" pinfunction="A8" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="PIN15">
+      <node ref="J1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U2" pin="18" pinfunction="B1" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="PIN15_H">
+      <node ref="J3" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="A1" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="PIN16">
+      <node ref="J1" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U2" pin="17" pinfunction="B2" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="PIN16_H">
+      <node ref="J3" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="A2" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="PIN17">
+      <node ref="J1" pin="15" pinfunction="Pin_15" pintype="passive"/>
+      <node ref="U4" pin="17" pinfunction="B2" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="PIN17_H">
+      <node ref="J3" pin="15" pinfunction="Pin_15" pintype="passive"/>
+      <node ref="U4" pin="3" pinfunction="A2" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="PIN18">
+      <node ref="J1" pin="18" pinfunction="Pin_18" pintype="passive"/>
+      <node ref="U4" pin="14" pinfunction="B5" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="PIN18_H">
+      <node ref="J3" pin="18" pinfunction="Pin_18" pintype="passive"/>
+      <node ref="U4" pin="6" pinfunction="A5" pintype="bidirectional"/>
+    </net>
+    <net code="12" name="PIN19">
+      <node ref="J1" pin="17" pinfunction="Pin_17" pintype="passive"/>
+      <node ref="U4" pin="15" pinfunction="B4" pintype="bidirectional"/>
+    </net>
+    <net code="13" name="PIN19_H">
+      <node ref="J3" pin="17" pinfunction="Pin_17" pintype="passive"/>
+      <node ref="U4" pin="5" pinfunction="A4" pintype="bidirectional"/>
+    </net>
+    <net code="14" name="PIN20">
+      <node ref="J1" pin="16" pinfunction="Pin_16" pintype="passive"/>
+      <node ref="U4" pin="16" pinfunction="B3" pintype="bidirectional"/>
+    </net>
+    <net code="15" name="PIN20_H">
+      <node ref="J3" pin="16" pinfunction="Pin_16" pintype="passive"/>
+      <node ref="U4" pin="4" pinfunction="A3" pintype="bidirectional"/>
+    </net>
+    <net code="16" name="PIN25">
+      <node ref="J1" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="U3" pin="18" pinfunction="B1" pintype="bidirectional"/>
+    </net>
+    <net code="17" name="PIN25_H">
+      <node ref="J3" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="A1" pintype="bidirectional"/>
+    </net>
+    <net code="18" name="PIN26">
+      <node ref="J1" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="U3" pin="17" pinfunction="B2" pintype="bidirectional"/>
+    </net>
+    <net code="19" name="PIN26_H">
+      <node ref="J3" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="A2" pintype="bidirectional"/>
+    </net>
+    <net code="20" name="PIN27">
+      <node ref="J1" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U2" pin="16" pinfunction="B3" pintype="bidirectional"/>
+    </net>
+    <net code="21" name="PIN27_H">
+      <node ref="J3" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="A3" pintype="bidirectional"/>
+    </net>
+    <net code="22" name="PIN28">
+      <node ref="J1" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="U2" pin="15" pinfunction="B4" pintype="bidirectional"/>
+    </net>
+    <net code="23" name="PIN28_H">
+      <node ref="J3" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="A4" pintype="bidirectional"/>
+    </net>
+    <net code="24" name="PIN29">
+      <node ref="J1" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="U3" pin="16" pinfunction="B3" pintype="bidirectional"/>
+    </net>
+    <net code="25" name="PIN29_H">
+      <node ref="J3" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="A3" pintype="bidirectional"/>
+    </net>
+    <net code="26" name="PIN30">
+      <node ref="J1" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="U3" pin="15" pinfunction="B4" pintype="bidirectional"/>
+    </net>
+    <net code="27" name="PIN30_H">
+      <node ref="J3" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="A4" pintype="bidirectional"/>
+    </net>
+    <net code="28" name="PIN31">
+      <node ref="J1" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="U4" pin="18" pinfunction="B1" pintype="bidirectional"/>
+    </net>
+    <net code="29" name="PIN31_H">
+      <node ref="J3" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="U4" pin="2" pinfunction="A1" pintype="bidirectional"/>
+    </net>
+    <net code="30" name="PIN41">
+      <node ref="J2" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U2" pin="14" pinfunction="B5" pintype="bidirectional"/>
+    </net>
+    <net code="31" name="PIN41_H">
+      <node ref="J4" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="A5" pintype="bidirectional"/>
+    </net>
+    <net code="32" name="PIN42">
+      <node ref="J2" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U1" pin="11" pinfunction="B8" pintype="bidirectional"/>
+    </net>
+    <net code="33" name="PIN42_H">
+      <node ref="J4" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="A8" pintype="bidirectional"/>
+    </net>
+    <net code="34" name="PIN48">
+      <node ref="J2" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="U3" pin="14" pinfunction="B5" pintype="bidirectional"/>
+    </net>
+    <net code="35" name="PIN48_H">
+      <node ref="J4" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="A5" pintype="bidirectional"/>
+    </net>
+    <net code="36" name="PIN49">
+      <node ref="J2" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="U3" pin="12" pinfunction="B7" pintype="bidirectional"/>
+    </net>
+    <net code="37" name="PIN49_H">
+      <node ref="J4" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="U3" pin="8" pinfunction="A7" pintype="bidirectional"/>
+    </net>
+    <net code="38" name="PIN51">
+      <node ref="J2" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="U2" pin="11" pinfunction="B8" pintype="bidirectional"/>
+    </net>
+    <net code="39" name="PIN51_H">
+      <node ref="J4" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="U2" pin="9" pinfunction="A8" pintype="bidirectional"/>
+    </net>
+    <net code="40" name="PIN52">
+      <node ref="J2" pin="20" pinfunction="Pin_20" pintype="passive"/>
+      <node ref="U5" pin="17" pinfunction="B2" pintype="bidirectional"/>
+    </net>
+    <net code="41" name="PIN52_H">
+      <node ref="J4" pin="20" pinfunction="Pin_20" pintype="passive"/>
+      <node ref="U5" pin="3" pinfunction="A2" pintype="bidirectional"/>
+    </net>
+    <net code="42" name="PIN53">
+      <node ref="J2" pin="19" pinfunction="Pin_19" pintype="passive"/>
+      <node ref="U5" pin="18" pinfunction="B1" pintype="bidirectional"/>
+    </net>
+    <net code="43" name="PIN53_H">
+      <node ref="J4" pin="19" pinfunction="Pin_19" pintype="passive"/>
+      <node ref="U5" pin="2" pinfunction="A1" pintype="bidirectional"/>
+    </net>
+    <net code="44" name="PIN54">
+      <node ref="J2" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U2" pin="12" pinfunction="B7" pintype="bidirectional"/>
+    </net>
+    <net code="45" name="PIN54_H">
+      <node ref="J4" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="A7" pintype="bidirectional"/>
+    </net>
+    <net code="46" name="PIN55">
+      <node ref="J2" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="U3" pin="13" pinfunction="B6" pintype="bidirectional"/>
+    </net>
+    <net code="47" name="PIN55_H">
+      <node ref="J4" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="U3" pin="7" pinfunction="A6" pintype="bidirectional"/>
+    </net>
+    <net code="48" name="PIN56">
+      <node ref="J2" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U2" pin="13" pinfunction="B6" pintype="bidirectional"/>
+    </net>
+    <net code="49" name="PIN56_H">
+      <node ref="J4" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="A6" pintype="bidirectional"/>
+    </net>
+    <net code="50" name="PIN71">
+      <node ref="J2" pin="18" pinfunction="Pin_18" pintype="passive"/>
+      <node ref="U4" pin="11" pinfunction="B8" pintype="bidirectional"/>
+    </net>
+    <net code="51" name="PIN71_H">
+      <node ref="J4" pin="18" pinfunction="Pin_18" pintype="passive"/>
+      <node ref="U4" pin="9" pinfunction="A8" pintype="bidirectional"/>
+    </net>
+    <net code="52" name="PIN72">
+      <node ref="J2" pin="17" pinfunction="Pin_17" pintype="passive"/>
+      <node ref="U4" pin="12" pinfunction="B7" pintype="bidirectional"/>
+    </net>
+    <net code="53" name="PIN72_H">
+      <node ref="J4" pin="17" pinfunction="Pin_17" pintype="passive"/>
+      <node ref="U4" pin="8" pinfunction="A7" pintype="bidirectional"/>
+    </net>
+    <net code="54" name="PIN73">
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="18" pinfunction="B1" pintype="bidirectional"/>
+    </net>
+    <net code="55" name="PIN73_H">
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="A1" pintype="bidirectional"/>
+    </net>
+    <net code="56" name="PIN74">
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="B2" pintype="bidirectional"/>
+    </net>
+    <net code="57" name="PIN74_H">
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="A2" pintype="bidirectional"/>
+    </net>
+    <net code="58" name="PIN75">
+      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="B3" pintype="bidirectional"/>
+    </net>
+    <net code="59" name="PIN75_H">
+      <node ref="J3" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="A3" pintype="bidirectional"/>
+    </net>
+    <net code="60" name="PIN76">
+      <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="B6" pintype="bidirectional"/>
+    </net>
+    <net code="61" name="PIN76_H">
+      <node ref="J4" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="A6" pintype="bidirectional"/>
+    </net>
+    <net code="62" name="PIN77">
+      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="B5" pintype="bidirectional"/>
+    </net>
+    <net code="63" name="PIN77_H">
+      <node ref="J3" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="A5" pintype="bidirectional"/>
+    </net>
+    <net code="64" name="PIN79">
+      <node ref="J2" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="U4" pin="13" pinfunction="B6" pintype="bidirectional"/>
+    </net>
+    <net code="65" name="PIN79_H">
+      <node ref="J4" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="U4" pin="7" pinfunction="A6" pintype="bidirectional"/>
+    </net>
+    <net code="66" name="PIN80">
+      <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="B7" pintype="bidirectional"/>
+    </net>
+    <net code="67" name="PIN80_H">
+      <node ref="J4" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="A7" pintype="bidirectional"/>
+    </net>
+    <net code="68" name="PIN85">
+      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="B4" pintype="bidirectional"/>
+    </net>
+    <net code="69" name="PIN85_H">
+      <node ref="J3" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="A4" pintype="bidirectional"/>
+    </net>
+    <net code="70" name="PIN86">
+      <node ref="J2" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="U3" pin="11" pinfunction="B8" pintype="bidirectional"/>
+    </net>
+    <net code="71" name="PIN86_H">
+      <node ref="J4" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="U3" pin="9" pinfunction="A8" pintype="bidirectional"/>
+    </net>
+    <net code="72" name="unconnected-(U1-NC-Pad1)">
+      <node ref="U1" pin="1" pinfunction="NC" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="73" name="unconnected-(U2-NC-Pad1)">
+      <node ref="U2" pin="1" pinfunction="NC" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="74" name="unconnected-(U3-NC-Pad1)">
+      <node ref="U3" pin="1" pinfunction="NC" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="75" name="unconnected-(U4-NC-Pad1)">
+      <node ref="U4" pin="1" pinfunction="NC" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="76" name="unconnected-(U5-NC-Pad1)">
+      <node ref="U5" pin="1" pinfunction="NC" pintype="unspecified+no_connect"/>
+    </net>
+  </nets>
+</export>
