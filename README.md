@@ -1,11 +1,10 @@
 # tangnano-5V
-5V tolerant interface for Tang Nano 20K (and 9K(TBA))
+5V tolerant interface for Tang Nano 20K and 9K
 
 This document is written mostly in Japanese. If necessary, please use a translation service such as DeepL (I recommend this) or Google.
 
 # 概要
-Tang Nano 20Kを5V系の回路に接続するためのインターフェースです．
-(9K用は現在作成中．)
+Tang Nanoを5V系の回路に接続するためのインターフェースです．Tang Nano 20K用と9K用の2種類ありますが，9K用はまだ挙動不振なので参考程度に置いておきます．
 
 # Tang Nano 20K 版(rev.1.1a)
 ## 機能
@@ -53,6 +52,23 @@ Tang Nano 20Kを5V系の回路に接続するためのインターフェース�
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 ![](images/asciiart_33MHz_6V.jpg)
 
+# Tang Nano 9K 版(rev.2.0)
+## 機能
+- Tang Nanoの9KのGPIO(全45本)を，TXS0108を介して5V系(TTL, CMOS)に接続します．
+- 信号方向を意識することなく双方向接続が可能です．
+- Pin79〜86は1.8Vのバンクなので，1.8V←→5Vの変換をします．その他のPinは3.3V←→5Vです．
+
+## 動作の確認状況
+- 27MHzのシステムクロックが全GPIOで5V系に出力できることを確認しました．
+- 入力側もHDMI関連ピンを除いて27MHzで入力できています．(下記参照)
+- JTAG関連が競合しているのか，USBを認識しなくなることがあります．
+
+## Pin68〜75について(TangNano9K)
+- HDMI端子に継がっているピン(pin68～75)の挙動がおかしいです。
+Lを入力すると異常発振します。Hにすると止まります。
+おそらく100nFのコンデンサとその先のU1、U2が悪さをしていると思います。
+これらのピンは使用しないか，HDMIを使わないなら外してしまってもいいかもしれません．
+
 ## 参考文献，データシート等
 - [SN74CB3T3245 Data sheet](https://www.ti.com/lit/ds/symlink/sn74cb3t3245.pdf)
 - [Application Note CBT-C, CB3T, and CB3Q Signal-Switch Families](https://www.ti.com/lit/an/scda008c/scda008c.pdf)
@@ -66,3 +82,4 @@ ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 - 2023/6/28: TangNanoZ80MEMの uart.vを更新．
 - 2023/7/06: TangNanoZ80MEMを修正．27MHz(Vcc=5.0V), 33MHz(Vcc=6.0V)で動作．
 - 2023/7/11: Tang Nano 20K用 rev.1.1→rev.1.1a (差分はシルクの修正のみ)
+- 2023/7/11: Tang Nano 9K用 rev.2.0公開 (若干問題あり)
