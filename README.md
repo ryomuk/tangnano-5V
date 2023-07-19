@@ -40,7 +40,7 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 ![](images/actual_board.jpg)
 
 # 応用例
-## TangNanoZ80MEM (Applications/TangNanoZ80MEM)
+## TangNanoZ80MEM [Applications/TangNanoZ80MEM](Applications/TangNanoZ80MEM)
 - Z80用のメモリシステムとクロック，UARTです．
 - クロックはTTLレベルではなくHでVcc-0.6Vのレベルが必要なので外付けのICで引き上げています．4MHz程度であれば330Ωプルアップ抵抗だけでも動きました．
 - Z84C0020，ブレッドボードで20.25MHzで動作しました．
@@ -52,7 +52,7 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 ![](images/asciiart_33MHz_6V.jpg)
 
-## TangNano6809MEM (Applications/TangNano6809MEM)
+## TangNano6809MEM [Applications/TangNano6809MEM](Applications/TangNano6809MEM)
 - MC6809用のメモリシステムとクロック，UARTです．
 - [電脳伝説さんのSBC6809](https://vintagechips.wordpress.com/2017/12/05/sbc6809%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)のdatapackに入っているBASIC9がバイナリそのままで動きます．
 
