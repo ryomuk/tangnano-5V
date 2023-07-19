@@ -57,10 +57,10 @@ ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 - [電脳伝説さんのSBC6809](https://vintagechips.wordpress.com/2017/12/05/sbc6809%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)のdatapackに入っているBASIC9がバイナリそのままで動きます．
 
 BASIC9起動画面
-![](images/6809basic.png)
+![](images/6809_basic.png)
 
 ASCIIART.BAS実行結果 (外部クロック6MHz)
-![](images/6809asciiart.png)
+![](images/6809_asciiart.png)
 
 # Tang Nano 9K 版(rev.2.0)
 ## 機能
