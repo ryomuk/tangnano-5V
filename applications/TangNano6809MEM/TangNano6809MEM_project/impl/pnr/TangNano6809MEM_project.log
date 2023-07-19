@@ -1,0 +1,30 @@
+Reading netlist file: "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\impl\gwsynthesis\TangNano6809MEM_project.vg"
+Parsing netlist file "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\impl\gwsynthesis\TangNano6809MEM_project.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\src\tn20k.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'sys_clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\impl\pnr\TangNano6809MEM_project.power.html" completed
+Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\impl\pnr\TangNano6809MEM_project.pin.html" completed
+Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\impl\pnr\TangNano6809MEM_project.rpt.html" completed
+Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\impl\pnr\TangNano6809MEM_project.rpt.txt" completed
+Generate file "D:\wks\ework\FPGA\TangNano\20k\TangNano6809MEM\TangNano6809MEM_project\impl\pnr\TangNano6809MEM_project.tr.html" completed
+Wed Jul 19 17:05:31 2023
+

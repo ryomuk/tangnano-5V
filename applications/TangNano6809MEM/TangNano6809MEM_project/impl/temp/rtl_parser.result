@@ -1,0 +1,52 @@
+[
+ {
+  "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/top.v",
+  "InstLine" : 13,
+  "InstName" : "top",
+  "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/top.v",
+  "ModuleLine" : 13,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/top.v",
+    "InstLine" : 82,
+    "InstName" : "onboard_rgb_led",
+    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/ws2812.v",
+    "ModuleLine" : 5,
+    "ModuleName" : "ws2812"
+   },
+   {
+    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/top.v",
+    "InstLine" : 110,
+    "InstName" : "uart_tx_inst_dbg",
+    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/uart.v",
+    "ModuleLine" : 7,
+    "ModuleName" : "uart_tx"
+   },
+   {
+    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/top.v",
+    "InstLine" : 139,
+    "InstName" : "PLL",
+    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/top.v",
+    "InstLine" : 236,
+    "InstName" : "uart_rx_inst",
+    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/uart.v",
+    "ModuleLine" : 63,
+    "ModuleName" : "uart_rx"
+   },
+   {
+    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/top.v",
+    "InstLine" : 250,
+    "InstName" : "uart_tx_inst",
+    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNano6809MEM/TangNano6809MEM_project/src/uart.v",
+    "ModuleLine" : 7,
+    "ModuleName" : "uart_tx"
+   }
+  ]
+ }
+]

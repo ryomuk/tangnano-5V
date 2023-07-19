@@ -41,7 +41,7 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 
 # 応用例
 ## TangNanoZ80MEM (Applications/TangNanoZ80MEM)
-- Z80用のメモリシステムとクロック回路です．
+- Z80用のメモリシステムとクロック，UARTです．
 - クロックはTTLレベルではなくHでVcc-0.6Vのレベルが必要なので外付けのICで引き上げています．4MHz程度であれば330Ωプルアップ抵抗だけでも動きました．
 - Z84C0020，ブレッドボードで20.25MHzで動作しました．
 - Z80のVccをTangNano側のVCC(USB給電)と別にしたいこともあるかもしれないので，ピンヘッダで接続するようにしています．
@@ -51,6 +51,16 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 ![](images/asciiart_33MHz_6V.jpg)
+
+## TangNano6809MEM (Applications/TangNano6809MEM)
+- MC6809用のメモリシステムとクロック，UARTです．
+- [電脳伝説さんのSBC6809](https://vintagechips.wordpress.com/2017/12/05/sbc6809%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)のdatapackに入っているBASIC9がバイナリそのままで動きます．
+
+BASIC9起動画面
+![](images/6809basic.jpg)
+
+ASCIIART.BAS実行結果 (外部クロック6MHz)
+![](images/6809asciiart.jpg)
 
 # Tang Nano 9K 版(rev.2.0)
 ## 機能
@@ -77,10 +87,11 @@ Lを入力すると異常発振します。Hにすると止まります。
 
 ## 更新履歴
 - 2023/6/16: 初版公開 (Tang Nano 20K用 rev.1.1)
-- 2023/6/25: 応用例(TangNanoZ80MEM を追加)
+- 2023/6/25: 応用例にTangNanoZ80MEMを追加
 - 2023/6/26: TangNanoZ80MEMのピン配置を変更．(rev1.0→rev.1.1)
 - 2023/6/28: TangNanoZ80MEMの uart.vを更新．
 - 2023/7/06: TangNanoZ80MEMを修正．27MHz(Vcc=5.0V), 33MHz(Vcc=6.0V)で動作．
 - 2023/7/11: Tang Nano 20K用 rev.1.1→rev.1.1a (差分はシルクの修正のみ)
 - 2023/7/11: Tang Nano 9K用 rev.2.0公開 (若干問題あり)
 - 2023/7/15: README.md用の画像(実物以外)を1.1aにアップデート
+- 2023/7/19: 応用例にTangNano6809MEMを追加
