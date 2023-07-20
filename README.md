@@ -33,11 +33,11 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 |U1, U2, U3, U4, U5 |5	|SN74CB3T3245PW  |TSSOP| |
 
 ## 画像
+![](images/tn20k5v_rev1_1a.jpg)
 ![](images/pcb.png)
 ![](images/3D_20k_1.png)
 ![](images/3D_20k_2.png)
 ![](images/3D_20k_3.png)
-![](images/actual_board.jpg)
 
 # 応用例
 ## TangNanoZ80MEM [applications/TangNanoZ80MEM](applications/TangNanoZ80MEM)
@@ -93,5 +93,6 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2023/7/06: TangNanoZ80MEMを修正．27MHz(Vcc=5.0V), 33MHz(Vcc=6.0V)で動作．
 - 2023/7/11: Tang Nano 20K用 rev.1.1→rev.1.1a (差分はシルクの修正のみ)
 - 2023/7/11: Tang Nano 9K用 rev.2.0公開 (若干問題あり)
-- 2023/7/15: README.md用の画像(実物以外)を1.1aにアップデート
+- 2023/7/15: README.md用の画像を1.1aにアップデート
 - 2023/7/19: 応用例にTangNano6809MEMを追加
+- 2023/7/20: tn20k5v rev1.1aの実物作成，動作確認OK．写真掲載．
