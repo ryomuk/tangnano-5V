@@ -62,6 +62,12 @@ BASIC9起動画面
 ASCIIART.BAS実行結果 (外部クロック6MHz)
 ![](images/6809_asciiart.png)
 
+## TangNano8070MEM [applications/TangNano8070MEM](applications/TangNano8070MEM)
+- INS8070N(SC/MP III)のメモリシステム，クロック，UARTです．
+- [electrelicさんのUniversal Monitor](https://electrelic.com/electrelic/node/1317)が，UARTのハンドシェイク部分を微修正して動きました．
+ブレッドボード版
+![](images/tangnano8070mem.png)
+
 # Tang Nano 9K 版(rev.2.0)
 ## 機能
 - Tang Nanoの9KのGPIO(全45本)を，TXS0108を介して5V系(TTL, CMOS)に接続します．
@@ -96,3 +102,4 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2023/7/15: README.md用の画像を1.1aにアップデート
 - 2023/7/19: 応用例にTangNano6809MEMを追加
 - 2023/7/20: tn20k5v rev1.1aの実物作成，動作確認OK．写真掲載．
+- 2023/7/23: 応用例にTangNano8070MEMを追加．
