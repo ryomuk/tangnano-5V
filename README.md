@@ -66,7 +66,7 @@ ASCIIART.BAS実行結果 (外部クロック6MHz)
 - INS8070N(SC/MP III)のメモリシステム，クロック，UARTです．
 - [electrelicさんのUniversal Monitor](https://electrelic.com/electrelic/node/1317)が，UARTのハンドシェイク部分を微修正して動きました．
 ブレッドボード版
-![](images/tangnano8070mem.png)
+![](images/tangnano8070mem.jpg)
 
 # Tang Nano 9K 版(rev.2.0)
 ## 機能
