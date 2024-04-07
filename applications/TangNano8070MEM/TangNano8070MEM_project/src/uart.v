@@ -2,7 +2,11 @@
 // data 8bit, no parity, stop 1bit, no flow control
 // modified from Sipeed's example
 // by Ryo Mukai
-// 2023/6/28
+// 2023/06/28:
+//   - initial version
+// 2024/04/07:
+//   - tx_ready bug fixed
+//   - some port names changed
 
 module uart_tx
   #(
@@ -15,7 +19,7 @@ module uart_tx
    input [7:0] tx_data,  //data to send
    input       tx_send,  // send data
    output reg  tx_ready, // tx module ready
-   output reg  tx_pin    //serial data output
+   output reg  tx_out    //serial data output
    );
 
   localparam   CYCLE = CLK_FRQ / BAUD_RATE;
@@ -33,14 +37,16 @@ module uart_tx
     else
       case(state)
 	S_IDLE: begin
-	   tx_pin <= 1'b1;
-	   tx_ready <= 1'b1;
 	   if(tx_send) begin
 	      send_buf <= {1'b1, tx_data[7:0], 1'b0}; // stopbit + data + startbit
 	      tx_ready <= 0;
 	      bit_cnt <= 4'd0;
 	      cycle_cnt <= 16'd0;
 	      state <= S_SEND;
+	   end
+	   else begin
+	      tx_out <= 1'b1;
+	      tx_ready <= 1'b1;
 	   end
 	end
 	S_SEND:
@@ -49,7 +55,7 @@ module uart_tx
 	       state <= S_IDLE;
 	  end
 	  else if(cycle_cnt == CYCLE - 1) begin
-	     tx_pin <= send_buf[bit_cnt];
+	     tx_out <= send_buf[bit_cnt];
 	     bit_cnt <= bit_cnt + 4'd1;
 	     cycle_cnt <= 16'd0;
 	  end
@@ -71,7 +77,7 @@ module uart_rx
    output reg [7:0] rx_data, // received serial data
    output reg	    rx_data_ready, // flag to indicate received data is ready
    input	    rx_clear,      // clear the rx_data_ready flag
-   input	    rx_pin   // serial data input
+   input	    rx_in   // serial data input
    );
   //calculates the clock cycle for baud rate 
   localparam	    CYCLE = CLK_FRQ / BAUD_RATE;
@@ -99,7 +105,7 @@ module uart_rx
       end
     else
       begin
-	 rx_d0 <= rx_pin;
+	 rx_d0 <= rx_in;
 	 rx_d1 <= rx_d0;
       end
 
@@ -172,7 +178,7 @@ module uart_rx
     if(~reset_n)
       rx_buffer <= 8'd0;
     else if(state == S_RECEIVE && cycle_cnt == CYCLE/2 - 1)
-	 rx_buffer[bit_cnt] <= rx_pin;
+	 rx_buffer[bit_cnt] <= rx_in;
     else
       rx_buffer <= rx_buffer; 
 

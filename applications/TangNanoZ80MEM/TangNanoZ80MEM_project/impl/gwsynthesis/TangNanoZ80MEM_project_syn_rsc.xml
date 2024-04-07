@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="75" Alu="7" Lut="78" Bsram="32">
-    <SubModule name="PLL"/>
-    <SubModule name="uart_rx_inst" Register="40" Alu="15" Lut="34"/>
-    <SubModule name="uart_tx_inst" Register="31" Lut="51"/>
+<Module name="top" Register="71" Alu="14" Lut="86" Bsram="32">
+ <SubModule name="uart_rx_inst" Register="40" Alu="15" Lut="37"/>
+ <SubModule name="uart_tx_inst" Register="31" Lut="52"/>
 </Module>

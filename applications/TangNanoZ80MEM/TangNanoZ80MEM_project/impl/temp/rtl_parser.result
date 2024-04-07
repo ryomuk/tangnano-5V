@@ -1,43 +1,43 @@
 [
  {
-  "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-  "InstLine" : 13,
+  "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/gowin_rpll/gowin_rpll.v",
+  "InstLine" : 10,
+  "InstName" : "Gowin_rPLL",
+  "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/gowin_rpll/gowin_rpll.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "Gowin_rPLL"
+ },
+ {
+  "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
+  "InstLine" : 17,
   "InstName" : "top",
-  "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-  "ModuleLine" : 13,
+  "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
+  "ModuleLine" : 17,
   "ModuleName" : "top",
   "SubInsts" : [
    {
-    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-    "InstLine" : 101,
-    "InstName" : "PLL",
-    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/gowin_rpll/gowin_rpll.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "Gowin_rPLL"
-   },
-   {
-    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-    "InstLine" : 211,
+    "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
+    "InstLine" : 215,
     "InstName" : "uart_rx_inst",
-    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
-    "ModuleLine" : 63,
+    "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
+    "ModuleLine" : 69,
     "ModuleName" : "uart_rx"
    },
    {
-    "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-    "InstLine" : 225,
+    "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
+    "InstLine" : 229,
     "InstName" : "uart_tx_inst",
-    "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
-    "ModuleLine" : 7,
+    "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
+    "ModuleLine" : 11,
     "ModuleName" : "uart_tx"
    }
   ]
  },
  {
-  "InstFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/ws2812.v",
+  "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/ws2812.v",
   "InstLine" : 5,
   "InstName" : "ws2812",
-  "ModuleFile" : "D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/ws2812.v",
+  "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/ws2812.v",
   "ModuleLine" : 5,
   "ModuleName" : "ws2812"
  }

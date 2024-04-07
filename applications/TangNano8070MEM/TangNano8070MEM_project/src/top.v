@@ -4,6 +4,7 @@
 //
 // by Ryo Mukai
 // 2023/7/23
+// 2024/4/7
 //---------------------------------------------------------------------------
 
 //`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
@@ -138,7 +139,7 @@ module top(
        .tx_data       (tx_data_dbg),
        .tx_send       (tx_send_dbg),
        .tx_ready      (tx_ready_dbg),
-       .tx_pin        (uart_tx_dbg)
+       .tx_out        (uart_tx_dbg)
        );
 
 //---------------------------------------------------------------------------
@@ -270,7 +271,7 @@ module top(
        .rx_data       (rx_data      ),
        .rx_data_ready (rx_data_ready),
        .rx_clear      (rx_clear),
-       .rx_pin        (uart_rx      )
+       .rx_in         (uart_rx      )
        );
 
   uart_tx#
@@ -284,7 +285,7 @@ module top(
        .tx_data       (tx_data),
        .tx_send       (tx_send),
        .tx_ready      (tx_ready),
-       .tx_pin        (uart_tx)
+       .tx_out        (uart_tx)
        );
 
 endmodule

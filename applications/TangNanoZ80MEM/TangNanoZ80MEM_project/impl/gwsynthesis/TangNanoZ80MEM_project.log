@@ -1,17 +1,16 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\gowin_rpll\gowin_rpll.v'
-Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'
-Analyzing included file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\rom.v'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":92)
-Back to file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":92)
-Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v'
-Undeclared symbol 'rx_negedge', assumed default net type 'wire'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":93)
-Analyzing Verilog file 'D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\ws2812.v'
-Compiling module 'top'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":13)
-Extracting RAM for identifier 'mem'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":52)
-Compiling module 'Gowin_rPLL'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\gowin_rpll\gowin_rpll.v":10)
-Compiling module 'uart_rx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":63)
-Compiling module 'uart_tx(CLK_FRQ=27000000,BAUD_RATE=115200)'("D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":7)
+Analyzing Verilog file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\gowin_rpll\gowin_rpll.v'
+Analyzing Verilog file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'
+Analyzing included file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\rom.v'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":95)
+Back to file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":95)
+Analyzing Verilog file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v'
+Undeclared symbol 'rx_negedge', assumed default net type 'wire'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":99)
+Analyzing Verilog file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\ws2812.v'
+Compiling module 'top'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":16)
+Extracting RAM for identifier 'mem'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":55)
+Compiling module 'uart_rx(CLK_FRQ=27000000,BAUD_RATE=115200)'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":69)
+Compiling module 'uart_tx(CLK_FRQ=27000000,BAUD_RATE=115200)'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":11)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
@@ -29,7 +28,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\gwsynthesis\TangNanoZ80MEM_project.vg" completed
-WARN  (CK3000) : Can't calculate clocks' relationship between: "IORQ_n" and "PLL/rpll_inst/CLKOUT.default_gen_clk"
-[100%] Generate report file "D:\wks\ework\FPGA\TangNano\20k\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\gwsynthesis\TangNanoZ80MEM_project_syn.rpt.html" completed
+[95%] Generate netlist file "C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\gwsynthesis\TangNanoZ80MEM_project.vg" completed
+[100%] Generate report file "C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\gwsynthesis\TangNanoZ80MEM_project_syn.rpt.html" completed
 GowinSynthesis finish

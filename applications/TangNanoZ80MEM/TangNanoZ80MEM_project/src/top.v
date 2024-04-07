@@ -4,11 +4,15 @@
 //
 // by Ryo Mukai
 // 2023/7/6
+// - initial version
+// 2024/4/7
+// - some port names for uart.v changed
+// - default clock changed to USE_DIV_CLK(13.5MHz)
 //---------------------------------------------------------------------------
 
-`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
+//`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
 //`define USE_SYS_CLK  // CLK = sys_clk (27MHz)
-//`define USE_DIV_CLK  // CLK = divided sys_clk (defined by Z80CLK_FRQ)
+`define USE_DIV_CLK  // CLK = divided sys_clk (defined by Z80CLK_FRQ)
 
 module top(
     input	 sw1,
@@ -215,7 +219,7 @@ module top(
        .rx_data       (rx_data      ),
        .rx_data_ready (rx_data_ready),
        .rx_clear      (rx_clear),
-       .rx_pin        (uart_rx      )
+       .rx_in         (uart_rx      )
        );
 
   uart_tx#
@@ -229,7 +233,7 @@ module top(
        .tx_data       (tx_data),
        .tx_send       (tx_send),
        .tx_ready      (tx_ready),
-       .tx_pin        (uart_tx)
+       .tx_out        (uart_tx)
        );
 
 endmodule
