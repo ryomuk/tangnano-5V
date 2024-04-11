@@ -64,6 +64,12 @@ BASIC9起動画面
 ASCIIART.BAS実行結果 (外部クロック6MHz)
 ![](images/6809_asciiart.png)
 
+### 注意事項(TangNano6809MEM)
+- PC接続時にUSB経由の通信が確立しない問題があることがわかりました．
+- 入力に使用しているピンのどれかがUSB-JTAGの初期化用の信号と競合しているのが原因な気がしますが特定できませんでした．
+- 下記のようにVCCのラインを切断して，PCと接続後に6809のVCCを継げるという手順が必要です．
+![](images/6809_vcc.jpg)
+
 ## TangNano8070MEM [applications/TangNano8070MEM](applications/TangNano8070MEM)
 - INS8070N(SC/MP III)のメモリシステム，クロック，UARTです．
 - [ElectrelicさんのUniversal Monitor](https://electrelic.com/electrelic/node/1317)が，UARTのハンドシェイク部分を微修正して動きました．
@@ -106,4 +112,5 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2023/7/19: 応用例にTangNano6809MEMを追加
 - 2023/7/20: tn20k5v rev1.1aの実物作成，動作確認OK．写真掲載．
 - 2023/7/23: 応用例にTangNano8070MEMを追加．
-- 2024/4/07: uart.vのバグ修正．(tx_ready関連)
+- 2024/4/07: uart.vのバグ修正．(tx_ready関連)  (uart.vはたぶんまだバグがあります．)
+- 2024/4/11: TangNano6809MEMに関する注意事項記載
