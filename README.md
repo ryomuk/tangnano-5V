@@ -94,6 +94,9 @@ Lを入力すると異常発振します。Hにすると止まります。
 おそらく100nFのコンデンサとその先のU1、U2が悪さをしていると思います。
 これらのピンは使用しないか，HDMIを使わないなら外してしまってもいいかもしれません．
 
+# uart.vについて [applications/uart/uart.v](applications/uart/uart.v)
+- 各応用例の通信部分はSipeedのサンプル( https://github.com/sipeed/TangNano-20K-example )をベースにして独自に書き替えたものを使っています．CPU速度と通信速度によっては不安定だったりして時々書き直しているので，最新版は別のフォルダに入れることにしました．
+
 ## 参考文献，データシート等
 - [SN74CB3T3245 Data sheet](https://www.ti.com/lit/ds/symlink/sn74cb3t3245.pdf)
 - [Application Note CBT-C, CB3T, and CB3Q Signal-Switch Families](https://www.ti.com/lit/an/scda008c/scda008c.pdf)
@@ -112,5 +115,6 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2023/7/19: 応用例にTangNano6809MEMを追加
 - 2023/7/20: tn20k5v rev1.1aの実物作成，動作確認OK．写真掲載．
 - 2023/7/23: 応用例にTangNano8070MEMを追加．
-- 2024/4/07: uart.vのバグ修正．(tx_ready関連)  (uart.vはたぶんまだバグがあります．)
+- 2024/4/07: uart.vのバグ修正．(tx_ready関連)
 - 2024/4/11: TangNano6809MEMに関する注意事項記載
+- 2024/4/12: uart.vの最新版格納用のフォルダを追加
