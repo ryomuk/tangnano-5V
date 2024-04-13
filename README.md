@@ -40,6 +40,9 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 ![](images/3D_20k_3.png)
 
 # 応用例
+いろいろなCPUのメモリシステム，UARTを構築した応用例です．
+各CPUで共通に使用しているUARTモジュールuart.vは適当に作ったために時々不具合が見つかってバグ修正しています．旧版との互換性は確認していないので，別フォルダ [applications/uart/uart.v](applications/uart/uart.v) に置いてあります．
+
 ## TangNanoZ80MEM [applications/TangNanoZ80MEM](applications/TangNanoZ80MEM)
 - Z80用のメモリシステムとクロック，UARTです．
 - クロックはTTLレベルではなくHでVcc-0.6Vのレベルが必要なので外付けのICで引き上げています．4MHz程度であれば330Ωプルアップ抵抗だけでも動きました．
@@ -95,7 +98,7 @@ Lを入力すると異常発振します。Hにすると止まります。
 これらのピンは使用しないか，HDMIを使わないなら外してしまってもいいかもしれません．
 
 # UARTモジュールについて [applications/uart/uart.v](applications/uart/uart.v)
-- 各応用例の通信部分はSipeedのサンプル( https://github.com/sipeed/TangNano-20K-example )をベースにして独自に書き替えたものを使っています．CPU速度と通信速度によっては不安定だったりすることがあり，時々書き直しているので，最新版は別のフォルダに入れることにしました．
+- 各応用例の通信部分はSipeedのサンプル( https://github.com/sipeed/TangNano-20K-example )をベースにして独自に書き替えたものを使っています．CPU速度と通信速度によっては不安定だったりすることがあり，時々書き直してます．旧版との互換性を全部確認するのは面倒なので最新版は別のフォルダに入れることにしました．
 
 ## 参考文献，データシート等
 - [SN74CB3T3245 Data sheet](https://www.ti.com/lit/ds/symlink/sn74cb3t3245.pdf)
@@ -117,4 +120,5 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2023/7/23: 応用例にTangNano8070MEMを追加．
 - 2024/4/07: uart.vのバグ修正．(tx_ready関連)
 - 2024/4/11: TangNano6809MEMに関する注意事項記載
-- 2024/4/12: uart.vの最新版格納用のフォルダを追加
+- 2024/4/12: uart.vの最新版格納用のフォルダ applications/uart を作成
+- 2024/4/13: applications/uart/uart.v 更新
