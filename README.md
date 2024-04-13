@@ -41,7 +41,8 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 
 # 応用例
 いろいろなCPUのメモリシステム，UARTを構築した応用例です．
-各CPUで共通に使用しているUARTモジュールuart.vは適当に作ったために時々不具合が見つかってバグ修正しています．旧版との互換性は確認していないので，別フォルダ [applications/uart/uart.v](applications/uart/uart.v) に置いてあります．
+各CPUで共通に使用しているUARTモジュールuart.vは適当に作ったために時々不具合が見つかってバグ修正しています．旧版との互換性は確認していないので，CPUによっては旧版のままになっています．
+最新版は別フォルダ [applications/uart/uart.v](applications/uart/uart.v) に置いてありますので，必要であればコピーしてご使用下さい．
 
 ## TangNanoZ80MEM [applications/TangNanoZ80MEM](applications/TangNanoZ80MEM)
 - Z80用のメモリシステムとクロック，UARTです．
@@ -53,6 +54,7 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 - PCB版で27MHz(USB給電，Vcc=4.94V), 33MHz(Z80はTangNanoと別給電, Vcc=6.0V)で動作しました．(2023/7/6追記)
 - uart.vにバグがあったので修正しました．(2024/4/7追記)
 - top.vのデフォルトのクロック周波数を13.5MHzにしました．(2024/4/7追記)
+- uart.vをリファクタリングしました．(2024/4/13追記)
 
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 ![](images/asciiart_33MHz_6V.jpg)
