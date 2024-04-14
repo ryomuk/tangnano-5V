@@ -40,9 +40,10 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 ![](images/3D_20k_3.png)
 
 # 応用例
-いろいろなCPUのメモリシステム，UARTを構築した応用例です．
-各CPUで共通に使用しているUARTモジュールuart.vは適当に作ったために時々不具合が見つかってバグ修正しています．旧版との互換性は確認していないので，CPUによっては旧版のままになっています．
-最新版は別フォルダ [applications/uart/uart.v](applications/uart/uart.v) に置いてありますので，必要であればコピーしてご使用下さい．
+- いろいろなCPUのメモリシステム，UARTを構築した応用例です．
+- 勉強のために作った習作なのでかなり荒削りでいろいろと不備やバグがあると思いますがご容赦下さい。
+- 各CPUで共通に使用しているUARTモジュールuart.vは適当に作ったために時々不具合が見つかってバグ修正しています．旧版との互換性は確認していないので，CPUによっては旧版のままになっています．最新版は別フォルダ [applications/uart/uart.v](applications/uart/uart.v) に置いてありますので，必要であればコピーしてご使用下さい．
+- ターミナルソフトの通信遅延はCPUの速度や通信速度にあわせて適宜設定して下さい。(例: 10ms/文字, 100ms/行)
 
 ## TangNanoZ80MEM [applications/TangNanoZ80MEM](applications/TangNanoZ80MEM)
 - Z80用のメモリシステムとクロック，UARTです．
@@ -124,3 +125,4 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2024/4/11: TangNano6809MEMに関する注意事項記載
 - 2024/4/12: uart.vの最新版格納用のフォルダ applications/uart を作成
 - 2024/4/13: applications/uart/uart.v 更新
+- 2024/4/14: README修正
