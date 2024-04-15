@@ -30,7 +30,7 @@ Tang Nanoを5V系の回路に接続するためのインターフェースです
 TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモしておきます。
 - pin15～20は510RでLEDに継がっていて入力に使うとIIL=約3.0mA。
 - pin52～53は2.2Kで5VとFETに継がっててIIL=約4.4mA。
-- pin25は5.1KでGND、IIH=0.6mA。
+- pin26は5.1KでGND、IIH=0.6mA。
 - その他のほとんどのピンはだいたいIIL=0.9mA程度、IIH=0.1mA以下。
 
 ## BOM
