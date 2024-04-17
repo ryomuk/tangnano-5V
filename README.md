@@ -4,7 +4,8 @@
 This document is written mostly in Japanese. If necessary, please use a translation service such as DeepL (I recommend this) or Google.
 
 # 概要
-Tang Nanoを5V系の回路に接続するためのインターフェースです．Tang Nano 20K用と9K用の2種類ありますが，9K用はまだ挙動不振なので参考程度に置いておきます．
+Tang Nanoを5V系の回路に接続するためのインターフェースです．昔のCPU用のメモリシステムやI/OをTang Nanoに実装することを主目的に作成しました。
+Tang Nano 20K用と9K用の2種類ありますが，9K用はまだ挙動不振なので参考程度に置いておきます．
 
 # Tang Nano 20K 版(rev.1.1a)
 ## 機能
@@ -49,7 +50,7 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 ![](images/3D_20k_3.png)
 
 # 応用例
-- いろいろなCPUのメモリシステム，UARTを構築した応用例です．
+- いろいろなCPUのメモリシステム，UARTを構築した応用例です．CPUをFPGAでエミュレートするのではなく、本物のCPUを動かすことを目的にしています。
 - 勉強のために作った習作なのでかなり荒削りでいろいろと不備やバグがあると思いますがご容赦下さい。
 - 各CPUで共通に使用しているUARTモジュールuart.vは適当に作ったために時々不具合が見つかってバグ修正しています．旧版との互換性は確認していないので，CPUによっては旧版のままになっています．最新版は別フォルダ [applications/uart/uart.v](applications/uart/uart.v) に置いてありますので，必要であればコピーしてご使用下さい．
 - ターミナルソフトの通信遅延はCPUの速度や通信速度にあわせて適宜設定して下さい。(例: 10ms/文字, 100ms/行)
@@ -70,6 +71,9 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - top.v: UART_CTRLのrx_data_readyの位置をbit1から0に変更しました．(2024/4/17)
 - rom/rom.unimon339.v を同梱しました．ライセンスはファイル参照．(2024/4/17)
 
+### 関連ブログ
+- [Z80をオーバークロックしてみる](https://blog.goo.ne.jp/tk-80/e/6de3708450bac79c2c1cef7728d0c877)
+  
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 ![](images/asciiart_33MHz_6V.jpg)
 
@@ -123,6 +127,7 @@ Lを入力すると異常発振します。Hにすると止まります。
 - [Application Note CBT-C, CB3T, and CB3Q Signal-Switch Families](https://www.ti.com/lit/an/scda008c/scda008c.pdf)
 - [Logic Guide, Texas Instruments](https://www.ti.com/lit/sg/sdyu001ab/sdyu001ab.pdf)
 - [ロジック・ガイド(日本語版), Texas Instruments](https://www.tij.co.jp/jp/lit/sg/jajt217/jajt217.pdf)
+- [5V系・3.3V系信号レベル変換, cepstrum](https://www.cepstrum.co.jp/hobby/5v33v/5v33v.html)
 
 ## 更新履歴
 - 2023/6/16: 初版公開 (Tang Nano 20K用 rev.1.1)
