@@ -11,6 +11,7 @@
 // 2024/4/17
 // - bug fix (memory write timing)
 // - indicate state of UART and heartbeat on RGB LED
+// - rx_data_ready in IOADDR_UART_CTRL moved from bit1 to bit0
 //---------------------------------------------------------------------------
 
 //`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
@@ -213,8 +214,8 @@ module top(
 	end
 	IOADDR_UART_CTRL: // Control register
 //	  io_data <= {6'b000000, rx_data_ready, tx_ready};// for SBC8080
-	  // for SBCZ80 Grant's BASIC
-	  io_data <= {5'b00000, tx_ready, rx_data_ready, 1'b0};
+	  // for SBCZ80 Grant's BASIC and universal monitor
+	  io_data <= {5'b00000, tx_ready, 1'b0, rx_data_ready};
       endcase
     else
       if(rx_data_ready == 1'b0)

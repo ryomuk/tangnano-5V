@@ -67,6 +67,8 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - uart.vをリファクタリングしました．(2024/4/13)
 - top.v: write_memoryのエッジの正負が間違っていたので修正しました．(2024/4/17)
 - top.v: RGBLEDで点滅とUARTの状態表示をするようにしました．(2024/4/17)
+- top.v: UART_CTRLのrx_data_readyの位置をbit1から0に変更しました．(2024/4/17)
+- rom/rom.unimon339.v を同梱しました．ライセンスはファイル参照．(2024/4/17)
 
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
 ![](images/asciiart_33MHz_6V.jpg)
@@ -140,4 +142,5 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2024/4/13: applications/uart/uart.v 更新
 - 2024/4/14: README修正(応用例に関するエクスキューズを追記)
 - 2024/4/15: README修正(6809、R1の除去について, TangNano20Kのピンに関するメモ)
-- 2024/4/17: TangNanoZ80MEMのtop.v修正(writeのバグとRGBLED)
+- 2024/4/17: TangNanoZ80MEMのtop.v修正(writeのバグ, RGBLED, UART_CTRL)
+- 2024/4/17: TangNanoZ80MEMのrom/rom.unimon339.v 追加
