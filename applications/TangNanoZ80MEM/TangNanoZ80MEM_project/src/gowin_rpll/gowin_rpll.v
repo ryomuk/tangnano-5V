@@ -1,11 +1,11 @@
 //Copyright (C)2014-2023 Gowin Semiconductor Corporation.
 //All rights reserved.
 //File Title: IP file
-//GOWIN Version: V1.9.8.11 Education
+//GOWIN Version: V1.9.9 Beta-4 Education
 //Part Number: GW2AR-LV18QN88C8/I7
 //Device: GW2AR-18
 //Device Version: C
-//Created Time: Thu Jul 06 11:30:51 2023
+//Created Time: Wed Apr 17 08:05:25 2024
 
 module Gowin_rPLL (clkout, clkin);
 
@@ -40,9 +40,9 @@ rPLL rpll_inst (
 
 defparam rpll_inst.FCLKIN = "27";
 defparam rpll_inst.DYN_IDIV_SEL = "false";
-defparam rpll_inst.IDIV_SEL = 5;
+defparam rpll_inst.IDIV_SEL = 8;
 defparam rpll_inst.DYN_FBDIV_SEL = "false";
-defparam rpll_inst.FBDIV_SEL = 6;
+defparam rpll_inst.FBDIV_SEL = 10;
 defparam rpll_inst.DYN_ODIV_SEL = "false";
 defparam rpll_inst.ODIV_SEL = 16;
 defparam rpll_inst.PSDA_SEL = "0000";

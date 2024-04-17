@@ -7,15 +7,15 @@
 
 -mod_name Gowin_rPLL
 -file_name gowin_rpll
--path D:/wks/ework/FPGA/TangNano/20k/TangNanoZ80MEM/TangNanoZ80MEM_project/src/gowin_rpll/
+-path C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/gowin_rpll/
 -type PLL
 -rPll true
 -file_type vlg
 -dev_type GW2AR-18C
 -dyn_idiv_sel false
--idiv_sel 6
+-idiv_sel 9
 -dyn_fbdiv_sel false
--fbdiv_sel 7
+-fbdiv_sel 11
 -dyn_odiv_sel false
 -odiv_sel 16
 -dyn_da_en true

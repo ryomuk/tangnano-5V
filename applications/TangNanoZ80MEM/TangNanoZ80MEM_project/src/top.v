@@ -8,6 +8,9 @@
 // 2024/4/7
 // - some port names for uart.v changed
 // - default clock changed to USE_DIV_CLK(13.5MHz)
+// 2024/4/17
+// - bug fix (memory write timing)
+// - indicate state of UART and heartbeat on RGB LED
 //---------------------------------------------------------------------------
 
 //`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
@@ -37,10 +40,12 @@ module top(
   parameter	 SYSCLK_FRQ  = 27_000_000; //Hz
 
 `ifdef USE_DIV_CLK
-//  parameter	 Z80CLK_FRQ  =  4_500_000; //Hz
-//  parameter	 Z80CLK_FRQ  =  6_750_000; //Hz
-//  parameter	 Z80CLK_FRQ  =  9_000_000; //Hz
-  parameter	 Z80CLK_FRQ  = 13_500_000; //Hz
+//  parameter	 Z80CLK_FRQ  =    500_000; //Hz (SYSCLK/54)
+//  parameter	 Z80CLK_FRQ  =  4_500_000; //Hz (SYSCLK/6)
+//  parameter	 Z80CLK_FRQ  =  4_500_000; //Hz (SYSCLK/6)
+//  parameter	 Z80CLK_FRQ  =  6_750_000; //Hz (SYSCLK/4)
+//  parameter	 Z80CLK_FRQ  =  9_000_000; //Hz (SYSCLK/3)
+  parameter	 Z80CLK_FRQ  = 13_500_000; //Hz (SYSCLK/2)
 `endif
   
     parameter	 UART_BPS    =     115200; //Hz
@@ -75,20 +80,36 @@ module top(
   reg [7:0]		LED_G;
   reg [7:0]		LED_B;
   
+  reg [25:0]		cnt_500ms;
+  reg			clk_1Hz;
+
 //  assign DBG_TRG = rx_data_ready;
   assign DBG_TRG = ((address == 16'h0073) & (~M1_n | sw2));
+
+//`define USE_RGBLED_FOR_DEBUG
+`ifdef  USE_RGBLED_FOR_DEBUG
+  // output debug signal to RGB_LED pin
   assign LED_RGB = ~M1_n & ~IORQ_n;
-//  ws2812 onboard_rgb_led(.clk(sys_clk), .we(1'b1), .sout(LED_RGB),
-//			 .r(LED_R), .g(LED_G), .b(LED_B));
+`else
+  // indicate state of UART and heartbeat on RGB LED
+  ws2812 onboard_rgb_led(.clk(sys_clk), .we(1'b1), .sout(LED_RGB),
+			 .r(LED_R), .g(LED_G), .b(LED_B));
+  always @(posedge sys_clk)
+    if(cnt_500ms == SYSCLK_FRQ/2) begin
+       cnt_500ms <= 0;
+       clk_1Hz = ~clk_1Hz;
+    end else 
+      cnt_500ms <= cnt_500ms + 1'b1;
 
   always @(posedge CLK)
     if(~RESET_n)
       {LED_R, LED_G, LED_B} <= 24'h00_00_00;
     else begin
-       LED_R <= ( ~INT_n )        ? 8'h10: 8'h00;
-       LED_G <= ( rx_data_ready ) ? 8'h10: 8'h00;
-       LED_B <= ( tx_ready )      ? 8'h10: 8'h00;
+       LED_R <= ( rx_data_ready ) ? 8'h10: 8'h00;
+       LED_G <= ( tx_ready      ) ? 8'h10: 8'h00;
+       LED_B <= ( clk_1Hz       ) ? 8'h10: 8'h00;
     end
+`endif
 
 //---------------------------------------------------------------------------
 // ROM DATA
@@ -160,7 +181,8 @@ module top(
     address <= A;
 
   wire write_memory = (~MREQ_n & ~WR_n);
-  always @(negedge write_memory)
+  always @(posedge write_memory)
+//  always @(negedge write_memory) // this is wrong (2024/4/17)
     if(address[15] == 1'b1) begin // 0000H to 7FFFH is ROM
        mem[address] <= D;
 //	  DBG_TRG = ~DBG_TRG;
