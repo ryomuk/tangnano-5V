@@ -23,7 +23,10 @@ for(my $addr = 0; $addr < $ROMSIZE; $addr++){
     if(sysread($fh, $buf, 1)){
 	$data = unpack("C", $buf);
     } else {
-	$data = 0;
+	if($addr % 4 != 0){
+	    printf "\n";
+	}
+	last;
     }
     printf("mem['h%04X]=8'h%02X;", $addr, $data);
     if($addr % 4 == 3){

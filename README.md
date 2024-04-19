@@ -147,5 +147,6 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2024/4/13: applications/uart/uart.v 更新
 - 2024/4/14: README修正(応用例に関するエクスキューズを追記)
 - 2024/4/15: README修正(6809、R1の除去について, TangNano20Kのピンに関するメモ)
-- 2024/4/17: TangNanoZ80MEMのtop.v修正(writeのバグ, RGBLED, UART_CTRL)
-- 2024/4/17: TangNanoZ80MEMのrom/rom.unimon339.v 追加
+- 2024/4/17: TangNanoZ80MEM: top.v修正(writeのバグ, RGBLED, UART_CTRL)
+- 2024/4/17: TangNanoZ80MEM: rom/rom.unimon339.v 追加
+- 2024/4/19: TangNanoZ80MEM: rom/bin2v.pl修正, romファイルの余計な0フィルを削除
