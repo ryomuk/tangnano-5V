@@ -41,11 +41,10 @@ module top(
   parameter	 SYSCLK_FRQ  = 27_000_000; //Hz
 
 `ifdef USE_DIV_CLK
+// CLK=SYSCLK/n (n must be even number)
 //  parameter	 Z80CLK_FRQ  =    500_000; //Hz (SYSCLK/54)
 //  parameter	 Z80CLK_FRQ  =  4_500_000; //Hz (SYSCLK/6)
-//  parameter	 Z80CLK_FRQ  =  4_500_000; //Hz (SYSCLK/6)
 //  parameter	 Z80CLK_FRQ  =  6_750_000; //Hz (SYSCLK/4)
-//  parameter	 Z80CLK_FRQ  =  9_000_000; //Hz (SYSCLK/3)
   parameter	 Z80CLK_FRQ  = 13_500_000; //Hz (SYSCLK/2)
 `endif
   
