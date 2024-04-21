@@ -5,7 +5,7 @@ This document is written mostly in Japanese. If necessary, please use a translat
 
 # 概要
 Tang Nanoを5V系の回路に接続するためのインターフェースです．昔のCPU用のメモリシステムやI/OをTang Nanoに実装することを主目的に作成しました。
-Tang Nano 20K用と9K用の2種類ありますが，9K用はまだ挙動不振なので参考程度に置いておきます．
+Tang Nano 20K用と9K用の2種類があります．
 
 # Tang Nano 20K 版(rev.1.1a)
 ## 機能
@@ -102,24 +102,50 @@ ASCIIART.BAS実行結果 (外部クロック6MHz)
 ブレッドボード版
 ![](images/tangnano8070mem.jpg)
 
-# Tang Nano 9K 版(rev.2.0)
+# Tang Nano 9K 版(rev.3.0)
 ## 機能
-- Tang Nanoの9KのGPIO(全45本)を，TXS0108を介して5V系(TTL, CMOS)に接続します．
+- Tang Nanoの9KのGPIO(全45本)を5V系(TTL, CMOS)に接続します．
 - 信号方向を意識することなく双方向接続が可能です．
-- Pin79〜86は1.8Vのバンクなので，1.8V←→5Vの変換をします．その他のPinは3.3V←→5Vです．
+- Pin79〜86は1.8Vのバンク(BANK3)なのでTXS0108Eを用いて，1.8V←→(5V or 3.3V)の変換をします．その他のピンはCB3T3245を用いて3.3V←5V, 3.3V→3.3Vです．
 
 ## 動作の確認状況
 - 27MHzのシステムクロックが全GPIOで5V系に出力できることを確認しました．
-- 入力側もHDMI関連ピンを除いて27MHzで入力できています．(下記参照)
-- JTAG関連が競合しているのか，USBを認識しなくなることがあります．
+- 入力は単体試験(1ピンづつ)では期待通りの動きをしますが，入出力混在時に怪しい挙動を示しました．
 
-## Pin68〜75について(TangNano9K)
-- HDMI端子に継がっているピン(pin68～75)の挙動がおかしいです。
-Lを入力すると異常発振します。Hにすると止まります。
-おそらく100nFのコンデンサとその先のU1、U2が悪さをしていると思います。
-これらのピンは使用しないか，HDMIを使わないなら外してしまってもいいかもしれません．
+### 見つかった問題点
+- (pin63 & pin86) をそれ以外の全ピンに出力するというテストで出力がおかしくなることがある．おそらくBANK3(1.8V系)がなんらかの干渉をしている．
+- pin68〜75(HDMI用端子)は入出力とも若干歪む．
 
-# UARTモジュールについて [applications/uart/uart.v](applications/uart/uart.v)
+### 問題点を回避するためのガイドライン
+- BANK3(1.8V系)は出力専用にする．
+- HDMI用のピンは歪むので動作を確認しながら使う．
+
+## BOM
+|Reference            |Qty| Value          |Size |Memo |
+|---------------------|---|----------------|-----|-----|
+|C3,C4,C5,C6,C7,C8,C9 |7  |0.1uF	   |1608(mm)(0603(inch))|C1,C2は無し |
+|J1                   |1  |pin header      |1x3 |BANK3 HI側の電圧選択用|
+|J2,J3                |2  |pin socket      |1x24 |for TangNano9K|
+|J4,J5                |2  |pin header      |1x24 |for 5V GPIO|
+|PS1                  |1  |TLV71318        |SOT23-5| 1.8Vレギュレータ|
+|U1                   |1  |TXS0108EPW      |TSSOP| |
+|U2,U3,U4,U5,U6       |5  |SN74CB3T3245PW  |TSSOP| |
+
+- C1,C2は.1.8Vレギュレータ用でしたが不要なので消した後にアノテーションし直すのを忘れて欠番になっています．
+
+## 画像
+![](images/tn9k5v_rev3.jpg)
+
+## 応用例
+## TangNanoZ80MEM [applications/TangNanoZ80MEM_9K](applications/TangNanoZ80MEM_9K)
+![](images/tangnanoz80mem9k.jpg)
+- 9K用インターフェースの動作確認用にブレッドボードで組んでみました．
+- とりあえず4.5MHzならたいていのピン配置で動きました．今のところ13.5MHzが限界．20K版ほど高速には動作しませんでした．
+- HDMIのコンデンサを外したら余計に動作しなくなったり，ピンアサインを変えるだけで動作しなくなったりするのでどこかにタイミング的な問題がありそうです．
+- MREQ_nはHDMIピンに継げた方が安定するので，MREQ_nでアドレスをラッチしているあたりが怪しそう．
+
+# その他
+## UARTモジュールについて [applications/uart/uart.v](applications/uart/uart.v)
 - 各応用例の通信部分はSipeedのサンプル( https://github.com/sipeed/TangNano-20K-example )をベースにして独自に書き替えたものを使っています．CPU速度と通信速度によっては不安定だったりすることがあり，時々書き直してます．旧版との互換性を全部確認するのは面倒なので最新版は別のフォルダに入れることにしました．
 
 ## 参考文献，データシート等
@@ -150,3 +176,5 @@ Lを入力すると異常発振します。Hにすると止まります。
 - 2024/4/17: TangNanoZ80MEM: top.v修正(writeのバグ, RGBLED, UART_CTRL)
 - 2024/4/17: TangNanoZ80MEM: rom/rom.unimon339.v 追加
 - 2024/4/19: TangNanoZ80MEM: rom/bin2v.pl修正, romファイルの余計な0フィルを削除
+- 2024/4/21: Tang Nano 9K用 rev.3.0公開
+

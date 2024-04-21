@@ -1,0 +1,7 @@
+Reference,Value,Datasheet,Footprint,Qty,DNP
+"C3,C4,C5,C6,C7,C8,C9",0.1uF,~,000_MyFootprint:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,7,
+J1,VCCB,~,000_MyFootprint:PinHeader_1x03_P2.54mm_Vertical,1,
+"J2,J3,J4,J5",Conn_01x24,~,,4,
+PS1,TLV71318_SOT23-5,http://www.ti.com/lit/ds/symlink/tlv713.pdf,Package_TO_SOT_SMD:SOT-23-5,1,
+U1,TXS0108EPW,www.ti.com/lit/ds/symlink/txs0108e.pdf,Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm,1,
+"U2,U3,U4,U5,U6",SN74CB3T3245PW,SN74CB3T3245PW,000_MyFootprint:PW20,5,
