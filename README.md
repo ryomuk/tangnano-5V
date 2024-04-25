@@ -102,6 +102,10 @@ ASCIIART.BAS実行結果 (外部クロック6MHz)
 ブレッドボード版
 ![](images/tangnano8070mem.jpg)
 
+## TangNanoDCJ11MEM
+- DEC DCJ11 (PDP-11の命令セットを持つCPU)のメモリシステムとUARTです。
+- 詳細は別リポジトリ[TangNanoDCJ11MEM](https://github.com/ryomuk/TangNanoDCJ11MEM) にあります。
+
 # Tang Nano 9K 版(rev.3.0)
 ## rev2.0からの差分
 - rev2.0(全バンクでTXS0108Eを使用)では、in68～75(HDMI用ピン)への入力で異常発振したり、USB接続が出来無くなったりする問題が発生していましたが、3.3Vバンクを20K版と同じ74CB3T3245に変更したところそれらの問題が解消しました。
