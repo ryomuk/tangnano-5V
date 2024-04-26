@@ -17,7 +17,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-    "InstLine" : 96,
+    "InstLine" : 95,
     "InstName" : "onboard_rgb_led",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/ws2812.v",
     "ModuleLine" : 5,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-    "InstLine" : 238,
+    "InstLine" : 239,
     "InstName" : "uart_rx_inst",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
     "ModuleLine" : 117,
@@ -33,7 +33,7 @@
    },
    {
     "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/top.v",
-    "InstLine" : 252,
+    "InstLine" : 253,
     "InstName" : "uart_tx_inst",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
     "ModuleLine" : 11,

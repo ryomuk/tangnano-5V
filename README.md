@@ -70,6 +70,7 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - top.v: RGBLEDで点滅とUARTの状態表示をするようにしました．(2024/4/17)
 - top.v: UART_CTRLのrx_data_readyの位置をbit1から0に変更しました．(2024/4/17)
 - rom/rom.unimon339.v を同梱しました．ライセンスはファイル参照．(2024/4/17)
+- top.v: tx_send関連のタイミングを修正しました．(2024/4/27)
 
 ### 関連ブログ
 - [Z80をオーバークロックしてみる](https://blog.goo.ne.jp/tk-80/e/6de3708450bac79c2c1cef7728d0c877)
@@ -184,4 +185,5 @@ ASCIIART.BAS実行結果 (外部クロック6MHz)
 - 2024/4/17: TangNanoZ80MEM: rom/rom.unimon339.v 追加
 - 2024/4/19: TangNanoZ80MEM: rom/bin2v.pl修正, romファイルの余計な0フィルを削除
 - 2024/4/21: Tang Nano 9K用 rev.3.0公開
+- 2024/4/27: TangNanoZ80MEM: UARTの送信タイミング変更
 

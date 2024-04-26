@@ -195,12 +195,14 @@ module top(
     address_io <= A[7:0];
 
   // UART SEND
-  always @(posedge CLK)
+//  always @(posedge CLK)
+  always @(negedge CLK)
     if(~IORQ_n & ~WR_n & address_io == IOADDR_UART_DATA) begin
        tx_data[7:0] <= D[7:0];
        tx_send <= 1'b1;
     end
-    else
+//    else
+    else if(~M1_n)
       tx_send <= 1'b0;
 
   // READ UART registers
