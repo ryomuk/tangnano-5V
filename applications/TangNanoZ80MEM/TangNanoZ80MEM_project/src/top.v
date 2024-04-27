@@ -12,6 +12,8 @@
 // - bug fix (memory write timing)
 // - indicate state of UART and heartbeat on RGB LED
 // - rx_data_ready in IOADDR_UART_CTRL moved from bit1 to bit0
+// 2024/4/27
+// - tx_send timing fixed for fast CPU clock
 //---------------------------------------------------------------------------
 
 //`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
@@ -196,13 +198,13 @@ module top(
 
   // UART SEND
 //  always @(posedge CLK)
-  always @(negedge CLK)
+  always @(negedge CLK) // for fast CPU clock (I'm not sure, but it works)
     if(~IORQ_n & ~WR_n & address_io == IOADDR_UART_DATA) begin
        tx_data[7:0] <= D[7:0];
        tx_send <= 1'b1;
     end
-//    else
-    else if(~M1_n)
+//    else // for slow CPU clock
+    else if(~M1_n) // for fast CPU clock
       tx_send <= 1'b0;
 
   // READ UART registers
