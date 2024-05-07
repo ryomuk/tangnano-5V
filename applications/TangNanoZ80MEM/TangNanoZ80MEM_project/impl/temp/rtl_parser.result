@@ -28,7 +28,7 @@
     "InstLine" : 241,
     "InstName" : "uart_rx_inst",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
-    "ModuleLine" : 117,
+    "ModuleLine" : 70,
     "ModuleName" : "uart_rx"
    },
    {
@@ -36,7 +36,7 @@
     "InstLine" : 255,
     "InstName" : "uart_tx_inst",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/tmp/tangnano-5V/applications/TangNanoZ80MEM/TangNanoZ80MEM_project/src/uart.v",
-    "ModuleLine" : 11,
+    "ModuleLine" : 12,
     "ModuleName" : "uart_tx"
    }
   ]

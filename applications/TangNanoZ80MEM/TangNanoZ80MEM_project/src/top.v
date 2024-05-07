@@ -17,8 +17,8 @@
 //---------------------------------------------------------------------------
 
 //`define USE_PLL_CLK  // CLK = PLL clock (defined by IP Core Generator)
-`define USE_SYS_CLK  // CLK = sys_clk (27MHz)
-//`define USE_DIV_CLK  // CLK = divided sys_clk (defined by Z80CLK_FRQ)
+//`define USE_SYS_CLK  // CLK = sys_clk (27MHz)
+`define USE_DIV_CLK  // CLK = divided sys_clk (defined by Z80CLK_FRQ)
 
 module top(
     input	 sw1,
