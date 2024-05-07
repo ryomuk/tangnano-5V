@@ -12,7 +12,7 @@ Running routing......
 [60%] Routing Phase 0 completed
 [70%] Routing Phase 1 completed
 [80%] Routing Phase 2 completed
-WARN  (PR1014) : Generic routing resource will be used to clock signal 'sys_clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'CLK_d' by the specified constraint. And then it may lead to the excessive delay or skew
 WARN  (PR1014) : Generic routing resource will be used to clock signal 'MREQ_n_d' by the specified constraint. And then it may lead to the excessive delay or skew
 WARN  (PR1014) : Generic routing resource will be used to clock signal 'IORQ_n_d' by the specified constraint. And then it may lead to the excessive delay or skew
 [90%] Routing Phase 3 completed
@@ -28,5 +28,5 @@ Generate file "C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangN
 Generate file "C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\pnr\TangNanoZ80MEM_project.rpt.html" completed
 Generate file "C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\pnr\TangNanoZ80MEM_project.rpt.txt" completed
 Generate file "C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\impl\pnr\TangNanoZ80MEM_project.tr.html" completed
-Sat Apr 27 00:54:02 2024
+Tue May  7 10:07:24 2024
 

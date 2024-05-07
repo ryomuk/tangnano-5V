@@ -156,6 +156,7 @@ ASCIIART.BAS実行結果 (外部クロック6MHz)
 # その他
 ## UARTモジュールについて [applications/uart/uart.v](applications/uart/uart.v)
 - 各応用例の通信部分はSipeedのサンプル( https://github.com/sipeed/TangNano-20K-example )をベースにして独自に書き替えたものを使っています．CPU速度と通信速度によっては不安定だったりすることがあり，時々書き直してます．旧版との互換性を全部確認するのは面倒なので最新版は別のフォルダに入れることにしました．
+- uart_txで，ステートが謎の遷移をする現象があったので，20240413版ではsipeedのサンプルを見倣ってステート遷移と信号の処理をバラバラに書くように修正したのですが，読み難いので20240507版で元に戻しました．(2024/5/7)
 
 ## 参考文献，データシート等
 - [SN74CB3T3245 Data sheet](https://www.ti.com/lit/ds/symlink/sn74cb3t3245.pdf)
@@ -187,4 +188,4 @@ ASCIIART.BAS実行結果 (外部クロック6MHz)
 - 2024/4/19: TangNanoZ80MEM: rom/bin2v.pl修正, romファイルの余計な0フィルを削除
 - 2024/4/21: Tang Nano 9K用 rev.3.0公開
 - 2024/4/27: TangNanoZ80MEM: UARTの送信タイミング変更
-
+- 2024/5/07: uart.v修正
