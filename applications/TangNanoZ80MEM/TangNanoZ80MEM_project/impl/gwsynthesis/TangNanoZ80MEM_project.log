@@ -5,13 +5,13 @@ Analyzing Verilog file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applicati
 Analyzing included file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\rom.v'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":119)
 Back to file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":119)
 Analyzing Verilog file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v'
-Undeclared symbol 'rx_negedge', assumed default net type 'wire'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":100)
+Undeclared symbol 'rx_negedge', assumed default net type 'wire'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":147)
 Analyzing Verilog file 'C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\ws2812.v'
 Compiling module 'top'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":23)
 Extracting RAM for identifier 'mem'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\top.v":63)
 Compiling module 'ws2812'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\ws2812.v":5)
-Compiling module 'uart_rx(CLK_FRQ=27000000,BAUD_RATE=115200)'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":70)
-Compiling module 'uart_tx(CLK_FRQ=27000000,BAUD_RATE=115200)'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":12)
+Compiling module 'uart_rx(CLK_FRQ=27000000,BAUD_RATE=115200)'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":117)
+Compiling module 'uart_tx(CLK_FRQ=27000000,BAUD_RATE=115200)'("C:\wks\ework\FPGA\TangNano\20k\tmp\tangnano-5V\applications\TangNanoZ80MEM\TangNanoZ80MEM_project\src\uart.v":11)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

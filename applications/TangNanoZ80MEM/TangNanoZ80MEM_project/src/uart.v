@@ -7,7 +7,6 @@
 // 2024/04/11: small bug fix
 // 2024/04/12: small bug fix
 // 2024/04/13: uart_tx refactored
-// 2024/05/07: uart_tx refactored
 
 module uart_tx
   #(
@@ -15,56 +14,104 @@ module uart_tx
     parameter BAUD_RATE = 0  //serial baud rate
     )
   (
-   input       clk, // clock input
-   input       reset_n, // synchronous reset input, low active 
-   input [7:0] tx_data, // data to send
-   input       tx_send, // trigger for sending data
-   output      tx_ready, // tx module ready
-   output      tx_out    // serial data output
+   input       clk,      // clock input
+   input       reset_n,  // synchronous reset input, low active 
+   input [7:0] tx_data,  // data to send
+   input       tx_send,  // trigger for sending data
+   output reg  tx_ready, // tx module ready
+   output reg  tx_out    // serial data output
    );
 
-  localparam   CYCLE  = CLK_FRQ / BAUD_RATE;
-  localparam   S_IDLE = 2'd0; // wait for tx_send asserted
-  localparam   S_SEND = 2'd1; // send start, data, stop bits
-  localparam   S_WAIT = 2'd2; // wait for tx_send deasserted
+  localparam   CYCLE = CLK_FRQ / BAUD_RATE;
+  localparam   S_IDLE    = 2'd0; // wait for tx_send asserted
+  localparam   S_SEND    = 2'd1; // send start, data, stop bits
+  localparam   S_WAIT    = 2'd2; // wait for tx_send deasserted
 
   reg [1:0]    state;
   reg [15:0]   cycle_cnt;  // baud counter
   reg [3:0]    bit_cnt;
   reg [9:0]    send_buf;
 
-  assign tx_out   = (state == S_SEND) ? send_buf[0] : 1'b1;
-  assign tx_ready = (state == S_IDLE) ? 1'b1 : 1'b0;
-  
   always@(posedge clk or negedge reset_n)
     if(reset_n == 1'b0)
       state <= S_IDLE;
     else
       case(state)
 	S_IDLE:
-	  if(tx_send == 1'b1) begin
-	     send_buf <= {1'b1, tx_data[7:0], 1'b0}; // stop + data + start
-	     cycle_cnt <= 16'd0;
-	     bit_cnt <= 4'd0;
-	     state <= S_SEND;
-	  end
+	  if(tx_send == 1'b1)
+	    state <= S_SEND;
+	  else
+	    state <= S_IDLE;
 	S_SEND:
-	  if(cycle_cnt == CYCLE - 1) begin
-	     if(bit_cnt == 4'd9)
-	       state <= S_WAIT;
-	     else begin
-		send_buf[9:0] <= {1'b1, send_buf[9:1]};
-		bit_cnt <= bit_cnt + 3'd1;
-	     end
-	     cycle_cnt <= 16'd0;
-	  end
-	  else 
-	    cycle_cnt <= cycle_cnt + 16'd1;	
+	  if(cycle_cnt == CYCLE - 1 && bit_cnt == 4'd9)
+	    state <= S_WAIT;
+	  else
+	    state <= S_SEND;
 	S_WAIT:
 	  if( tx_send == 1'b0 ) // wait for tx_send deasserted
 	    state <= S_IDLE;
-	default:;
+	  else state <= S_WAIT;
+	default:
+	  state <= state;
       endcase
+  
+  always@(posedge clk or negedge reset_n)
+    if(reset_n == 1'b0)
+      tx_ready <= 1'b0;
+    else
+      case(state)
+	S_IDLE:
+	  if(tx_send == 1'b0)
+	    tx_ready <= 1'b1;
+	  else 
+	    tx_ready <= 1'b0;
+	default:
+	  tx_ready <= 1'b0;
+      endcase
+
+  always@(posedge clk)
+    case(state)
+      S_IDLE:
+	send_buf <= {1'b1, tx_data[7:0], 1'b0}; // stop + data + start
+      S_SEND:
+	if(cycle_cnt == CYCLE - 1)
+	  send_buf[9:0] <= {1'b1, send_buf[9:1]};
+	else
+	  send_buf <= send_buf;
+      default:
+	send_buf <= send_buf;
+    endcase
+
+  always@(posedge clk )
+    case(state)
+      S_IDLE:
+	bit_cnt <= 4'd0;
+      S_SEND:
+	if(cycle_cnt == CYCLE - 1)
+	  bit_cnt <= bit_cnt + 3'd1;
+	else
+	  bit_cnt <= bit_cnt;
+      default:
+	bit_cnt <= bit_cnt;
+    endcase
+
+  always@(posedge clk)
+    case(state)
+      S_SEND:
+	if(cycle_cnt == CYCLE - 1)
+	  cycle_cnt <= 16'd0;
+	else
+	  cycle_cnt <= cycle_cnt + 16'd1;	
+      default:
+	cycle_cnt <= 16'd0;
+      endcase
+
+  always@(posedge clk)
+    if(state ==  S_SEND)
+      tx_out <= send_buf[0];
+    else
+      tx_out <= 1'b1;
+
 endmodule 
 
 module uart_rx
