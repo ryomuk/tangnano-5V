@@ -103,7 +103,8 @@ ASCIIART.BAS実行結果 (外部クロック6MHz)
 ブレッドボード版
 ![](images/tangnano8070mem.jpg)
 
-## TangNanoDCJ11MEM
+## TangNanoDCJ11MEM [ryomuk/TangNanoDCJ11MEM](https://github.com/ryomuk/TangNanoDCJ11MEM)
+![](images/DCJ11MEM.jpg)
 - DEC DCJ11 (PDP-11の命令セットを持つCPU)のメモリシステムとUARTです。
 - 詳細は別リポジトリ[TangNanoDCJ11MEM](https://github.com/ryomuk/TangNanoDCJ11MEM) にあります。
 
