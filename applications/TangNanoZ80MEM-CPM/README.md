@@ -11,8 +11,8 @@
 最初は
 [udo-munk/z80pack](https://github.com/udo-munk/z80pack)のcpm22をそのまま使おうと思っていたのですが，コンソール入力がうまくいかなかったので，Universal Monitorで使っているコンソールのI/Oの仕様
 ```
-データ     = 00H; 
-ステータス = 01H;
+data   = 00H; 
+status = 01H;
  bit0: rx_data_ready
  bit2: tx_ready
 ```
