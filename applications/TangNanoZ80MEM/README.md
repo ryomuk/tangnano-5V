@@ -19,7 +19,7 @@
 - [Z80をオーバークロックしてみる](https://blog.goo.ne.jp/tk-80/e/6de3708450bac79c2c1cef7728d0c877)
   
 ASCIIART.BAS実行結果 (33MHz, Vcc=6.0V)
-![](images/asciiart_33MHz_6V.jpg)
+![](../../images/asciiart_33MHz_6V.jpg)
 
 ## 更新履歴
 - 2023/06/25: 応用例にTangNanoZ80MEMを追加

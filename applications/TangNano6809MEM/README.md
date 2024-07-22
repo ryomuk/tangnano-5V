@@ -3,10 +3,10 @@
 - [電脳伝説さんのSBC6809](https://vintagechips.wordpress.com/2017/12/05/sbc6809%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)のdatapackに入っているBASIC9がバイナリそのままで動きます．
 
 BASIC9起動画面
-![](images/6809_basic.png)
+![](../../images/6809_basic.png)
 
 ASCIIART.BAS実行結果 (外部クロック6MHz)
-![](images/6809_asciiart.png)
+![](../../images/6809_asciiart.png)
 
 ## 注意事項
 - PC接続時にUSB経由の通信が確立しない問題があることがわかりました．
