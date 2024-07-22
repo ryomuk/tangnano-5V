@@ -59,6 +59,9 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - Z80用のメモリシステムとクロック，UARTです．
 - 関連ブログ [Z80をオーバークロックしてみる](https://blog.goo.ne.jp/tk-80/e/6de3708450bac79c2c1cef7728d0c877)
   
+## TangNanoZ80MEM-CPM [applications/TangNanoZ80MEM-CPM](applications/TangNanoZ80MEM-CPM)
+- TangNanoZ80MEMにfloppy/hard diskエミュレータを追加してCP/Mを動作させる試みです．
+
 ## TangNano6809MEM [applications/TangNano6809MEM](applications/TangNano6809MEM)
 - MC6809用のメモリシステムとクロック，UARTです．
 - [電脳伝説さんのSBC6809](https://vintagechips.wordpress.com/2017/12/05/sbc6809%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)のdatapackに入っているBASIC9がバイナリそのままで動きます．
