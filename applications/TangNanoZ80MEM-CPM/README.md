@@ -61,6 +61,7 @@ sudo if=sd.dsk of=/dev/sdb
 - z80pack [udo-munk/z80pack](https://github.com/udo-munk/z80pack)
 - SuperMEZ80-CPM [hanyazou/SuperMEZ80-CPM](https://github.com/hanyazou/SuperMEZ80-CPM)
 - CPUville [http://cpuville.com/Code/CPM.html](http://cpuville.com/Code/CPM.html)
+- Universal Monitor [https://electrelic.com/electrelic/node/1317](https://electrelic.com/electrelic/node/1317)
 
 ## 更新履歴
 - 2024/07/23: 初版公開
