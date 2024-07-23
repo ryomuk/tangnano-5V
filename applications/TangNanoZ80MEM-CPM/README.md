@@ -8,9 +8,13 @@
 
 ## 実装した機能について
 - 128byte/sectorのfloppy/hard diskエミュレータ
-- ディスク読み書きの際はBUSREQ_nでCPUを止めてDMAを行いますが，TangNanoのピンが足りないのでBUSACK_nは見ていません．
-- SW1はZ80のRESET_nによる通常のリセットです．
-- SW2はIPLを強制的に0000H〜00FFHにロードしてリセットします．
+  - ディスク読み書きの際はBUSREQ_nでCPUを止めてDMAを行いますが，TangNanoのピンが足りないのでBUSACK_nは見ていません．
+  詳細は下記参照．
+- リセット & IPL
+  - power on時にrom.vに書かれたIPLが0000H〜00FFHにロードされます．IPLはSDメモリの先頭128byteに書かれたbootloaderを0000H番地にロードしてその先頭にジャンプます．
+  - SW1はZ80のRESET_nによる通常のリセットです．
+  - SW2はIPLを再ロードしてリセットします．
+  - power on時はIPLがロードされるはずですが，うまく起動しない場合はSW2でリセットして下さい．
 - とりあえずお試しで作ってみたので，入出力はコンソールしか実装していません．PRT, AUXは未実装です．
 
 ## floppy/hard disk エミュレータについて
