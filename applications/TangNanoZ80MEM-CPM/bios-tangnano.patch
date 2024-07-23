@@ -1,5 +1,5 @@
 --- bios.asm	2024-07-22 15:26:36.632908086 +0900
-+++ new/bios.asm	2024-07-22 15:46:45.977032346 +0900
++++ new/bios.asm	2024-07-23 12:27:29.581226376 +0900
 @@ -2,6 +2,9 @@
  ;
  ;	Copyright (C) 1988-2007 by Udo Munk
@@ -23,21 +23,22 @@
  PRTSTA	EQU	2		;printer status port
  PRTDAT	EQU	3		;printer data port
  AUXDAT	EQU	5		;auxiliary data port
-@@ -126,8 +131,12 @@
+@@ -126,8 +131,13 @@
  ;
  ;	messages
  ;
 -SIGNON: DEFM	'64K CP/M Vers. 2.2 (Z80 CBIOS V1.2 for Z80SIM, '
-+SIGNON: DEFM	'64K CP/M Vers. 2.2 '
++SIGNON:	DEFB	13,10
++	DEFM	'64K CP/M Vers. 2.2 '
++	DEFB	13,10
 +	DEFM    '(Z80 CBIOS V1.2 for Z80SIM, '
  	DEFM	'Copyright 1988-2007 by Udo Munk)'
 +	DEFB	13,10
-+	DEFM	'                   '
 +	DEFM	'(modified for TangNanoZ80MEM by Ryo Mukai)'
  	DEFB	13,10,0
  ;
  LDERR:	DEFM	'BIOS: error booting'
-@@ -233,18 +242,31 @@
+@@ -233,18 +243,31 @@
  ;
  ;	console status, return 0ffh if character ready, 00h if not
  ;
