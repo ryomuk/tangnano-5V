@@ -21,6 +21,7 @@ status = 01H;
 ## とりあえず動かすための手順
 ### ジャンパ配線
 - DBG_TRG を BUSREQ_n に接続します．
+![](../../images/z80cpm_jumper.jpg)
 
 ### disk imageの準備
 - 私はVMWare上のubuntuで作業しています．
