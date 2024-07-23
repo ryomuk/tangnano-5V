@@ -1,0 +1,92 @@
+ AS V1.42 Beta [Bld 236] - Source File ipl.asm - Page 1 - 2024年07月23日 12時52分46秒
+
+
+       1/       0 :                     ;;;---------------------------------------------------------------------------
+       2/       0 :                     ;;; CP/M 2.2 boot-loader for TangNanoZ80MEM-CPM
+       3/       0 :                     ;;; by Ryo Mukai
+       4/       0 :                     ;;; 2024/07/23
+       5/       0 :                     ;;;---------------------------------------------------------------------------
+       6/       0 :                     
+       7/       0 :                     ;;;---------------------------------------------------------------------------
+       8/       0 :                     ;;; This source can be assembled with the Macroassembler AS
+       9/       0 :                     ;;; (http://john.ccac.rwth-aachen.de:8000/as/)
+      10/       0 :                     ;;;---------------------------------------------------------------------------
+      11/       0 :                     	
+      12/       0 :                     	CPU Z80
+      13/       0 :                     
+      14/       0 : =0AH                 DRIVE 	equ	0AH	; FDCD
+      15/       0 : =0BH                 TRACK 	equ	0BH	; FDCT
+      16/       0 : =0CH                 SECTOR	equ	0CH	; FDCS
+      17/       0 : =0DH                 FDCOP	equ	0DH	; FDCOP
+      18/       0 : =0FH                 DMAL	equ	0FH	; DMAL
+      19/       0 : =10H                 DMAH	equ	10H	; DMAH
+      20/       0 :                     
+      21/       0 :                     	org 0
+      22/       0 :                     BOOT:
+      23/       0 : C3 80 00            	JP START
+      24/       3 :                     	
+      25/      80 :                     	org 080H
+      26/      80 :                     ;;; read (dive 0, track 0, sector 1) to 0000H-007FH, and jump to 0000H
+      27/      80 :                     START:
+      28/      80 : ED 46               	IM 0
+      29/      82 : F3                  	DI
+      30/      83 : 01 01 00            	LD BC,1
+      31/      86 : 21 00 00            	LD HL,0
+      32/      89 : AF                  	XOR A
+      33/      8A : D3 0A               	OUT DRIVE,A
+      34/      8C : 78                  	LD A,B
+      35/      8D : D3 0B               	OUT TRACK,A
+      36/      8F : 79                  	LD A,C
+      37/      90 : D3 0C               	OUT SECTOR,A
+      38/      92 : 7D                  	LD A,L
+      39/      93 : D3 0F               	OUT DMAL,A
+      40/      95 : 7C                  	LD A,H
+      41/      96 : D3 10               	OUT DMAH,A
+      42/      98 : AF                  	XOR A
+      43/      99 : D3 0D               	OUT FDCOP,A
+      44/      9B : C3 00 00            	JP BOOT
+      45/      9E :                     	
+      46/      9E :                     
+ AS V1.42 Beta [Bld 236] - Source File ipl.asm - Page 2 - 2024年07月23日 12時52分46秒
+
+
+  Symbol Table (* = unused):
+  --------------------------
+
+*ARCHITECTURE :                                      "x86_64-unknown-linux" - |
+ BOOT :                           0 C | *CASESENSITIVE :                  0 - |
+*COMPMODE :                       0 - | *CONSTPI :        3.141592653589793 - |
+*DATE :             "2024\-027\-071\-07607\-026\-100\-12023\-026\-105\-091" - |
+ DMAH :                          10 - |  DMAL :                          0F - |
+ DRIVE :                         0A - | *FALSE :                          0 - |
+ FDCOP :                         0D - | *FULLPMMU :                       1 - |
+*HAS64 :                          1 - | *HASFPU :                         0 - |
+*HASPMMU :                        0 - | *INSUPMODE :                      0 - |
+*LISTON :                         1 - | *MACEXP :                         7 - |
+*MOMCPU :                        80 - | *MOMCPUNAME :                 "Z80" - |
+*NESTMAX :                      100 - | *PADDING :                        1 - |
+*RELAXED :                        0 - |  SECTOR :                        0C - |
+ START :                         80 C |
+*TIME :               "12\-026\-103\-12652\-027\-120\-12246\-025\-089\-110" - |
+ TRACK :                         0B - | *TRUE :                           1 - |
+*VERSION :                     142F - |
+
+     29 symbols
+     21 unused symbols
+
+ AS V1.42 Beta [Bld 236] - Source File ipl.asm - Page 3 - 2024年07月23日 12時52分46秒
+
+
+  Code Pages:
+  ----------
+
+STANDARD (0 changed characters)
+
+1 code page
+
+0.01 seconds assembly time
+
+     46 lines source file
+      2 passes
+      0 errors
+      0 warnings

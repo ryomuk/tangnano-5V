@@ -117,3 +117,4 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - 2024/06/21: applications/uart/にuart.v.20240621 追加
 - 2024/06/21: rx_clear, tx_sendのロジックについてREADMEに追記
 - 2024/07/23: READMEを階層化
+- 2024/07/23: TangNanoZ80MEM-CPM 公開
