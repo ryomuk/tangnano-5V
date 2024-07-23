@@ -34,15 +34,15 @@ git clone https://github.com/udo-munk/z80pack.git
 sudo apt install libjpeg-dev
 sudo apt install freeglut3-dev
 
-- disksフォルダにcpm22用のdiskをコピーする
+- disksフォルダにcpm22用のdiskをコピーしておく
 cd z80pack/cpmsim
 rm -f disks/drive[ab].dsk
 cp disks/library/cpm22-1.dsk disks/drivea.dsk
 cp disks/library/cpm22-2.dsk disks/driveb.dsk
 
-- bios_TangNanoZ80MEM.patch をあてる
+- bios-tangnano.patch をあててmakeする
 cd srccpm2
-patch -b < bios_TangNanoZ80MEM.patch
+patch -b < bios-tangnano.patch
 make
 
 - drivea.dsk を更新する
