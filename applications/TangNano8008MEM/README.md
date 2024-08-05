@@ -4,6 +4,7 @@
 
 ## ブレッドボード版のハードウェアについて
 ![](../../images/tangnano8008mem.jpg)
+- 回路図は[hardware/rev.1.0](hardware/rev.1.0/)にあります．
 - 配線量が少なく，クロックも低速なのでブレッドボードで簡単に作れました．
  - あまりに簡単に作れたので，基板を作るモチベーションが湧きません．
 - -9VはDCDCコンバータで作りました．
@@ -12,6 +13,7 @@
   - SYNC, S0〜2は1KΩの抵抗だけ入れてSN74CB3T3245内蔵のクランプダイオードに任せています．
 
 ## FPGAに実装したもの
+- プロジェクトは[TangNano8008MEM_project](TangNano8008MEM_project)にあります．
 - 16KBメモリ (8008のアドレス空間は14bitなのでフル実装です．)
 - UART(TXバッファ付き)
 - 割り込み機能
@@ -58,7 +60,7 @@ Make
 - お約束のASCIIART.BASを実行してみました．FOR文からGOTOで抜けるとエラーになるので微修正しました．
 - 計測マクロがうまく動かず，正確な時間は測定できなかったのですが，クロッ
 ク500kHzで約6時間40分で完走しました．
-![](../../images/tangnano8008mem.jpg)
+![](../../images/asciiart_8008.png)
 
 ## 関連情報
 - [bitsavers /intel/MCS8](http://www.bitsavers.org/components/intel/MCS8/)
