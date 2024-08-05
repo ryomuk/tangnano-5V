@@ -65,5 +65,5 @@ Make
 ## 関連情報
 - [bitsavers /intel/MCS8](http://www.bitsavers.org/components/intel/MCS8/)
 - [www.mars.dti.ne.jp/~mark08](http://www.mars.dti.ne.jp/~mark08/index.html) 8008に関する日本語の参考資料について網羅されています．
-- {SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)
+- [SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)
 - [github.com/jim11662418/8008-SBC](https://github.com/jim11662418/8008-SBC)
