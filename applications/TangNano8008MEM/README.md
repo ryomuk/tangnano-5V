@@ -30,7 +30,7 @@
 - Twitterで[SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)なるものが存在することを教えてもらったので試してみることにしました．
 
 #### SCELBI Basicのバイナリ作成方法等
-- ASL, Perlをインストールして下さい．私はWindowsのCygwin環境で使っています．
+- [ASL(The Macroassembler AS)](http://john.ccac.rwth-aachen.de:8000/as/), Perlをインストールして下さい．私はWindowsのCygwin環境で使っています．
 - ASLで，radix 8とすれば良いようだったのですが，その場合に10進数をどう表記するかわからなかったので，radixは10のままで8進数にQを付けるスクリプトを書いて対処しました．その他の修正も全部スクリプトで実施するようにしました．
 - どうやら文字コードの8bit目が1のようで，コンソールの入出力は入出力ルーチンで対処すれば簡単だったのですが，アセンブラのプログラムの方も
 ```
@@ -67,3 +67,4 @@ Make
 - [www.mars.dti.ne.jp/~mark08](http://www.mars.dti.ne.jp/~mark08/index.html) 8008に関する日本語の参考資料について網羅されています．
 - [SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)
 - [github.com/jim11662418/8008-SBC](https://github.com/jim11662418/8008-SBC)
+- [The Macroassembler AS](http://john.ccac.rwth-aachen.de:8000/as/)
