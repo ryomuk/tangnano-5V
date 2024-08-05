@@ -52,7 +52,7 @@ cd TangNano8008MEM/software/sc1
 wget https://www.willegal.net/scelbi/software/sc1.asm
 cp sc1.asm sc1.asm.org
 ./conv.pl < sc1.asm.org > sc1.asm
-Make
+make
 ./bin2v sc1.bin > rom.v
 ```
 
