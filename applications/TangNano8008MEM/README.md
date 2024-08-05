@@ -22,11 +22,11 @@
   - SW2: INTERRUPT信号をアサートし，バスにRST0命令を挿入
 
 ## ソフトウェアについて
-### echo back test[software/echo](software/echo)
+### echo back test ([software/echo](software/echo))
 - UARTの入出力テスト用プログラムです．
 - polling版と割り込み版はソースのdefine文で切り替えます．
 
-### SCELBAL (SCELBI Basic) [software/sc1](software/sc1)
+### SCELBAL (SCELBI Basic) ([software/sc1](software/sc1))
 - Twitterで[SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)なるものが存在することを教えてもらったので試してみることにしました．
 
 #### SCELBI Basicのバイナリ作成方法等
