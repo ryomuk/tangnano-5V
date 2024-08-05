@@ -1,0 +1,44 @@
+[
+ {
+  "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/top.v",
+  "InstLine" : 12,
+  "InstName" : "top",
+  "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/top.v",
+  "ModuleLine" : 12,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/top.v",
+    "InstLine" : 363,
+    "InstName" : "uart_rx_inst",
+    "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/uart.v",
+    "ModuleLine" : 151,
+    "ModuleName" : "uart_rx"
+   },
+   {
+    "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/top.v",
+    "InstLine" : 377,
+    "InstName" : "uart_tx_inst",
+    "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/uart.v",
+    "ModuleLine" : 18,
+    "ModuleName" : "uart_tx"
+   },
+   {
+    "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/top.v",
+    "InstLine" : 393,
+    "InstName" : "onboard_rgb_led",
+    "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/ws2812.v",
+    "ModuleLine" : 5,
+    "ModuleName" : "ws2812"
+   },
+   {
+    "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/top.v",
+    "InstLine" : 491,
+    "InstName" : "uart_dbg_tx_inst",
+    "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8008MEM/TangNano8008MEM_project/src/uart.v",
+    "ModuleLine" : 18,
+    "ModuleName" : "uart_tx"
+   }
+  ]
+ }
+]

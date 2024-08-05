@@ -1,0 +1,116 @@
+ AS V1.42 Beta [Bld 236] - Source File echo.asm - Page 1 - 2024年08月04日 13時50分13秒
+
+
+       1/       0 :                     ;;;---------------------------------------------------------------------------
+       2/       0 :                     ;;; This source can be assembled with the Macroassembler AS
+       3/       0 :                     ;;; (http://john.ccac.rwth-aachen.de:8000/as/)
+       4/       0 :                     ;;;---------------------------------------------------------------------------
+       5/       0 :                     
+       6/       0 :                     	cpu 8008	; AS's command to specify CPU
+       7/       0 :                     
+       8/       0 : =0H                  REG_CSR equ 00H
+       9/       0 : =1H                  REG_RX  equ 01H	
+      10/       0 : =10H                 REG_TX  equ 10H	
+      11/       0 :                     
+      12/       0 :                     	org 0H
+      13/       0 :                     RST0:
+      14/       0 : C0                  	NOP
+      15/       1 : 44 40 00            	JMP START
+      16/       4 :                     
+      17/       8 :                     	org 8H
+      18/       8 :                     RST1:
+      19/       8 : 43                  RXINT:	INP REG_RX
+      20/       9 : 44 43 00            	JMP PUTCH
+      21/       C :                     	
+      22/      10 :                     	org 10H
+      23/      10 : 44 40 00            RST2:	JMP START
+      24/      13 :                     
+      25/      18 :                     	org 18H
+      26/      18 : 44 40 00            RST3:	JMP START
+      27/      1B :                     
+      28/      20 :                     	org 20H
+      29/      20 : 44 40 00            RST4:	JMP START
+      30/      23 :                     
+      31/      28 :                     	org 28H
+      32/      28 : 44 40 00            RST5:	JMP START
+      33/      2B :                     
+      34/      30 :                     	org 30H
+      35/      30 : 44 40 00            RST6:	JMP START
+      36/      33 :                     	
+      37/      38 :                     	org 38H
+      38/      38 : 06 40               RST7:	LAI '@'
+      39/      3A : 44 43 00            	JMP PUTCH
+      40/      3D :                     
+      41/      40 :                     	org 40H
+      42/      40 :                     START:
+      43/      40 :                     ;;; uncomment this for polling
+      44/      40 :                     ;;  	CAL GETCH
+      45/      40 :                     ;;  	CAL PUTCH
+      46/      40 : 44 40 00            	JMP START 		; wait for interrupt
+      47/      43 :                     
+      48/      43 :                     PUTCH:
+      49/      43 : C8                  	LBA
+      50/      44 : 41                  	INP REG_CSR
+      51/      45 : 24 04               	NDI 04H
+      52/      47 : 68 43 00            	JTZ PUTCH
+      53/      4A : C1                  	LAB
+      54/      4B : 61                  	OUT REG_TX
+      55/      4C : 07                  	RET	
+      56/      4D :                     
+      57/      4D :                     GETCH:
+      58/      4D : 41                  	INP REG_CSR
+      59/      4E : 24 01               	NDI 01H
+      60/      50 : 68 4D 00            	JTZ GETCH
+ AS V1.42 Beta [Bld 236] - Source File echo.asm - Page 2 - 2024年08月04日 13時50分13秒
+
+
+      61/      53 : 43                  	INP REG_RX
+      62/      54 : 07                  	RET
+      63/      55 :                     
+ AS V1.42 Beta [Bld 236] - Source File echo.asm - Page 3 - 2024年08月04日 13時50分13秒
+
+
+  Symbol Table (* = unused):
+  --------------------------
+
+*ARCHITECTURE :                                      "x86_64-unknown-linux" - |
+*CASESENSITIVE :                  0 - | *COMPMODE :                       0 - |
+*CONSTPI :        3.141592653589793 - |
+*DATE :             "2024\-027\-071\-07608\-026\-100\-12004\-026\-105\-091" - |
+*FALSE :                          0 - | *FULLPMMU :                       1 - |
+ GETCH :                         4D C | *HAS64 :                          1 - |
+*HASFPU :                         0 - | *HASPMMU :                        0 - |
+*INSUPMODE :                      0 - | *LISTON :                         1 - |
+*MACEXP :                         7 - | *MOMCPU :                      8008 - |
+*MOMCPUNAME :                "8008" - | *NESTMAX :                      100 - |
+*PADDING :                        1 - |  PUTCH :                         43 C |
+ REG_CSR :                        0 - |  REG_RX :                         1 - |
+ REG_TX :                        10 - | *RELAXED :                        0 - |
+*RST0 :                           0 C | *RST1 :                           8 C |
+*RST2 :                          10 C | *RST3 :                          18 C |
+*RST4 :                          20 C | *RST5 :                          28 C |
+*RST6 :                          30 C | *RST7 :                          38 C |
+*RXINT :                          8 C |  START :                         40 C |
+*TIME :               "13\-026\-103\-12650\-027\-120\-12213\-025\-089\-110" - |
+*TRUE :                           1 - | *VERSION :                     142F - |
+*Z80SYNTAX :                      0 - |
+
+     37 symbols
+     31 unused symbols
+
+ AS V1.42 Beta [Bld 236] - Source File echo.asm - Page 4 - 2024年08月04日 13時50分13秒
+
+
+  Code Pages:
+  ----------
+
+STANDARD (0 changed characters)
+
+1 code page
+
+0.00 seconds assembly time
+
+     63 lines source file
+      2 passes
+      0 errors
+      0 warnings

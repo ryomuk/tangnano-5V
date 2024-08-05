@@ -1,0 +1,77 @@
+;;; 
+;;; I/O routine for the Scelbi Basic on TangNano8008MEM
+;;; 
+;;; by Ryo Mukai
+;;; 2024/08/05
+
+REG_CSR	 EQU 00H
+REG_RX	 EQU 01H
+REG_TX   EQU 10H
+
+;;; HERE IS THE USER DEFINED CHARACTER INPUT TO READ FROM SERIAL PORT
+CINP:	INP REG_CSR	; check rx_data_ready
+	RAR
+	JFC CINP
+	INP REG_RX
+	OUT REG_TX	; echo (without check tx_ready, as tx may have enough buffer)
+; 	CPI 7FH
+;	JTZ CINP_CTRL
+; 	CPI 20H
+; 	RFC
+;CINP_CTRL:
+	ORI 80H
+	RET
+	
+;;; no user defined functions yet, stop here if we: see one.
+UDEFX:	HLT
+
+;;; HERE IS THE USER DEFINED PRINT ROUTINE FOR A SERIAL PORT
+CPRINT:
+ 	LBA
+;;; 	INP REG_CSR
+;;; 	NDI 04H
+;;; 	JTZ CPRINT
+;;; 	LAB
+	NDI 7FH
+	CPI 0DH
+	JTZ PRINT_OK
+	CPI 0AH
+	JTZ PRINT_OK
+	CPI 7FH
+	JTZ PRINT_CTL
+	CPI 20H
+	JTC PRINT_CTL
+PRINT_OK:
+	OUT REG_TX
+ 	LAB
+	RET
+PRINT_CTL:
+	LAI '<'
+	OUT REG_TX
+ 	LAB
+	RAR
+	RAR
+	RAR
+	RAR
+	NDI 0FH
+	ADI 30H
+	CPI 3AH
+	JTC PRINT_L1
+	ADI 07H
+PRINT_L1:	
+	OUT REG_TX
+ 	LAB
+	NDI 0FH
+	ADI 30H
+	CPI 3AH
+	JTC PRINT_L2
+	ADI 07H
+PRINT_L2:
+	OUT REG_TX
+	LAI '>'
+	OUT REG_TX
+ 	LAB
+	RET	
+
+;;; THE ABOVE MUST CONCLUDE BEFORE BY PAGE 1 STARTS
+	

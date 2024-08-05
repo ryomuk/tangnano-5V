@@ -67,8 +67,12 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - [電脳伝説さんのSBC6809](https://vintagechips.wordpress.com/2017/12/05/sbc6809%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)のdatapackに入っているBASIC9がバイナリそのままで動きます．
 
 ## TangNano8070MEM [applications/TangNano8070MEM](applications/TangNano8070MEM)
-- INS8070N(SC/MP III)のメモリシステム，クロック，UARTです．
+- INS8070N(SC/MP III)用のメモリシステム，クロック，UARTです．
 - [ElectrelicさんのUniversal Monitor](https://electrelic.com/electrelic/node/1317)が，UARTのハンドシェイク部分を微修正して動きました．
+
+## TangNano8008MEM [applications/TangNano8008MEM](applications/TangNano8008MEM)
+- Intel 8008用のメモリシステム，クロック，UARTです．
+- [SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)が動きました．
 
 ## TangNanoDCJ11MEM [ryomuk/TangNanoDCJ11MEM](https://github.com/ryomuk/TangNanoDCJ11MEM)
 ![](images/DCJ11MEM.jpg)
@@ -118,3 +122,4 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - 2024/06/21: rx_clear, tx_sendのロジックについてREADMEに追記
 - 2024/07/23: READMEを階層化
 - 2024/07/23: TangNanoZ80MEM-CPM 公開
+- 2024/08/05: TangNano8008MEM 公開
