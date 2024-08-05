@@ -24,7 +24,16 @@
 ## ソフトウェアについて
 ### echo back test ([software/echo](software/echo))
 - UARTの入出力テスト用プログラムです．
-- polling版と割り込み版はソースのdefine文で切り替えます．
+- polling版と割り込み版はecho.asmの下記2行と，top.vのdefineで切り替えます．
+```
+echo.asm
+;;; uncomment this for polling
+;;  	CAL GETCH
+;;  	CAL PUTCH
+
+top.v
+//`define USE_RX_INTERRUPT
+```
 
 ### SCELBAL (SCELBI Basic) ([software/sc1](software/sc1))
 - Twitterで[SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)なるものが存在することを教えてもらったので試してみることにしました．
