@@ -13,7 +13,7 @@
   - SYNC, S0〜2は1KΩの抵抗だけ入れてSN74CB3T3245内蔵のクランプダイオードに任せています．
 
 ## FPGAに実装したもの
-- プロジェクトは[TangNano8008MEM_project](TangNano8008MEM_project)にあります．
+- プロジェクトは[TangNano8008MEM_project](TangNano8008MEM_project)です．
 - 16KBメモリ (8008のアドレス空間は14bitなのでフル実装です．)
 - UART(TXバッファ付き)
 - 割り込み機能
