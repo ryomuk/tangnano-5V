@@ -40,7 +40,7 @@ top.v
 
 #### SCELBI Basicのバイナリ作成方法等
 - [ASL(The Macroassembler AS)](http://john.ccac.rwth-aachen.de:8000/as/), Perlをインストールして下さい．私はWindowsのCygwin環境で使っています．
-- ASLで，radix 8とすれば良いようだったのですが，その場合に10進数をどう表記するかわからなかったので，radixは10のままで8進数にQを付けるスクリプトを書いて対処しました．その他の修正も全部スクリプトで実施するようにしました．
+- ASLで，radix 8とすれば良いようだったのですが，その場合に10進数をどう表記するかわからなかったので，radixは10のままで8進数にQを付けるスクリプトを書いて対処しました．その他の修正も全部スクリプト(conv.pl)で実施するようにしました．
 - どうやら文字コードの8bit目が1のようで，コンソールの入出力は入出力ルーチンで対処すれば簡単だったのですが，アセンブラのプログラムの方も
 ```
 DB "FOR"
@@ -64,6 +64,10 @@ cp sc1.asm sc1.asm.org
 make
 ./bin2v sc1.bin > rom.v
 ```
+- Faster SCELBAL (2012) [sc1fast.asm](https://www.willegal.net/scelbi/software/sc1fast.asm) もconv.plで変換できました．
+  - diffをとってみたらsc1.asmとの差分はほとんどありませんでした．
+  - 構文解析処理を工夫して高速化しているようです．
+  - mandelbrot.asmは10%ほど速くなりました．浮動小数点演算が支配項なので効果は限定的でした．
 
 #### 実行サンプル
 - お約束のASCIIART.BASを実行してみました．FOR文からGOTOで抜けるとエラーになるので微修正しました．
