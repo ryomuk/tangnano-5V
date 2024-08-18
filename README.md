@@ -73,6 +73,7 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 ## TangNano8008MEM [applications/TangNano8008MEM](applications/TangNano8008MEM)
 - Intel 8008用のメモリシステム，クロック，UARTです．
 - [SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)が動きました．
+- [VTL-4004](https://github.com/ryomuk/VTL4004)を8008用に書き直したVTL-8008が動きました
 
 ## TangNanoDCJ11MEM [ryomuk/TangNanoDCJ11MEM](https://github.com/ryomuk/TangNanoDCJ11MEM)
 ![](images/DCJ11MEM.jpg)
@@ -123,3 +124,4 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - 2024/07/23: READMEを階層化
 - 2024/07/23: TangNanoZ80MEM-CPM 公開
 - 2024/08/05: TangNano8008MEM 公開
+- 2024/08/18: TangNano8008MEM用のsoftwareにVTL-8008を追加

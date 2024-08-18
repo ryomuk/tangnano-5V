@@ -22,6 +22,9 @@
   - SW2: INTERRUPT信号をアサートし，バスにRST0命令を挿入
 
 ## ソフトウェアについて
+### VTL-8008 ([software/VTL8008](software/VTL8008))
+- 以前，4004用に書いた[VTL-4004](https://github.com/ryomuk/VTL4004)を8008用に書き直してみました．仕様はVTL-4004 ver2.0と同じです．面倒なので行の編集機能が実装していません．
+
 ### echo back test ([software/echo](software/echo))
 - UARTの入出力テスト用プログラムです．
 - polling版と割り込み版はecho.asmの下記2行と，top.vのdefineで切り替えます．
