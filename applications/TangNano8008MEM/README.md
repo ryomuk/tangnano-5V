@@ -15,7 +15,7 @@
 |C2                 |1  |1uF             |     |
 |D1-D8              |8  |1N4148          |     |
 |D9                 |1  | LED      |任意     |
-|J1                 |1  | DIP-40 Socket  |TangNano5V用|
+|J1                 |1  | DIP-40 Socket or 20x1 Pin frame x2  |TangNano5V用|
 |PS1                |1  |MAU103          |5V→9V用DCDC,  https://akizukidenshi.com/catalog/g/g112176/ |
 |R1-R5              |5  | 1k             |     |
 |R6                 |1  | 100k(適宜)     | 値はLEDにあわせて任意|
