@@ -2,15 +2,26 @@
 ## 概要
 - Intel 8008用のメモリシステム，クロック，UARTです．
 
-## ブレッドボード版のハードウェアについて
-![](../../images/tangnano8008mem.jpg)
-- 回路図は[hardware/rev.1.0](hardware/rev.1.0/)にあります．
-- 配線量が少なく，クロックも低速なのでブレッドボードで簡単に作れました．
- - あまりに簡単に作れたので，基板を作るモチベーションが湧きません．
-- -9VはDCDCコンバータで作りました．
+## PCB rev.1.0
+![](../../images/tangnano8008mem_pcb.jpg)
+- 回路図やガーバーファイルは[hardware/rev.1.0](hardware/rev.1.0/)にあります．
 - users manualには入出力はTTLレベルと書いてありますが，波形を観測したところ8008の出力はマイナス電位にもなるようでした．
   - バス(D0〜7)には外付けでクランプダイオードを回路に入れていますが，SN74CB3T3245にはクランプダイオードが内蔵されているので無くても動きます．
   - SYNC, S0〜2は1KΩの抵抗だけ入れてSN74CB3T3245内蔵のクランプダイオードに任せています．
+### BOM
+|Reference          |Qty| Value          |Memo |
+|-------------------|---|----------------|-----|
+|C1                 |1  |2.2uF           |     |
+|C2                 |1  |1uF             |     |
+|D1-D8              |8  |1N4148          |     |
+|D9                 |1  | LED      |任意     |
+|J1                 |1  | DIP-40 Socket  |TangNano5V用|
+|PS1                |1  |MAU103          |5V→9V用DCDC,  https://akizukidenshi.com/catalog/g/g112176/ |
+|R1-R5              |5  | 1k             |     |
+|R6                 |1  | 100k(適宜)     | 値はLEDにあわせて任意|
+|RN1, RN3           |2  | 4.7k x8       |     |
+|RN2                |1  | 1k x4          |     |
+|U1                 |1  | 18pin ZIFソケット |  intel8008用|
 
 ## FPGAに実装したもの
 - プロジェクトは[TangNano8008MEM_project](TangNano8008MEM_project)です．
@@ -78,9 +89,21 @@ make
 ク500kHzで約6時間40分で完走しました．
 ![](../../images/asciiart_8008.png)
 
+## ブレッドボード版
+![](../../images/tangnano8008mem.jpg)
+- 配線量が少なく，クロックも低速なのでブレッドボードで簡単に作れました．
+ - ~~あまりに簡単に作れたので，基板を作るモチベーションが湧きません．~~
+ - ブレッドボードを再利用するために基板を作りました．
+
 ## 関連情報
 - [bitsavers /intel/MCS8](http://www.bitsavers.org/components/intel/MCS8/)
 - [www.mars.dti.ne.jp/~mark08](http://www.mars.dti.ne.jp/~mark08/index.html) 8008に関する日本語の参考資料について網羅されています．
 - [SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)
 - [github.com/jim11662418/8008-SBC](https://github.com/jim11662418/8008-SBC)
 - [The Macroassembler AS](http://john.ccac.rwth-aachen.de:8000/as/)
+
+## 更新履歴
+- 2024/08/05: 初版公開
+- 2024/08/18: VTL-8008を追加
+- 2024/08/28: KiCADファイルrev1.0をブレッドボード用からプリント基板用に変更
+

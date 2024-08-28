@@ -125,3 +125,4 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - 2024/07/23: TangNanoZ80MEM-CPM 公開
 - 2024/08/05: TangNano8008MEM 公開
 - 2024/08/18: TangNano8008MEM用のsoftwareにVTL-8008を追加
+- 2024/08/28: TangNano8008MEMにPCB rev1.0を追加
