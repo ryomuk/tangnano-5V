@@ -39,7 +39,7 @@
 - [satoshiokue/MEZ8080](https://github.com/satoshiokue/MEZ8080)
 - [satoshiokue/EMUZ80-8080](https://github.com/satoshiokue/EMUZ80-8080)
 - [Gazelle8087/EMUZ80-8080G](https://github.com/Gazelle8087/EMUZ80-8080G)
-- [SBC8080](https://vintagechips.wordpress.com/2018/06/24/sbc8080-cpu%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)
+- [電脳伝説/SBC8080](https://vintagechips.wordpress.com/2018/06/24/sbc8080-cpu%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)
 
 ## 更新履歴
 - 2024/09/08: 初版公開
