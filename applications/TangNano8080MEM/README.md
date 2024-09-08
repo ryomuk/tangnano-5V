@@ -20,11 +20,13 @@
 |PS2                |1  |TJ7660          |5V→-5V用, https://akizukidenshi.com/catalog/g/g112017/|
 |R1                 |1  | 10k             |     |
 |R2,R3              |2  | 1k〜100k(適宜)     | 値はLEDにあわせて任意|
-|R4,R5              |2  | 47     | クロックダンピング用|
-|RN1                |1  | 4.7k x8       |     |
-|RN2                |1  | 100k x4       |     |
+|R4,R5              |2  | 47     | クロック用ダンピング抵抗|
+|RN1                |1  | 4.7k x8       |データバスプルアップ     |
+|RN2                |1  | 100k x4       |制御信号プルアップ       |
 |U1                 |1  | MIC4427 |  クロックドライバ|
 |U2                 |1  | 40pin ZIFソケット |  8080用|
+
+- RN2は当初10KΩにしていたのですが，TangNano20Kのpin75はB616_BOOTに継がっていて，起動時にUSBを検出してくれなくなってしまうので100kΩに変更しました．[TangNano6809MEM](../TangNano6809MEM)で起きていたのと同様の問題でした．
 
 ## FPGAに実装したもの
 - プロジェクトは[TangNano8080MEM_project](TangNano8080MEM_project)です．
