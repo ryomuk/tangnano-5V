@@ -75,6 +75,10 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - [SCELBAL (SCELBI Basic)](https://www.willegal.net/scelbi/scelbal.html)が動きました．
 - [VTL-4004](https://github.com/ryomuk/VTL4004)を8008用に書き直したVTL-8008が動きました
 
+## TangNano8080MEM [applications/TangNano8080MEM](applications/TangNano8080MEM)
+- Intel 8080用メモリシステム，クロック，UART，diskエミュレータです．
+- Z80MEM-CPMと同じdiskイメージを使用してCP/Mが起動します．
+
 ## TangNanoDCJ11MEM [ryomuk/TangNanoDCJ11MEM](https://github.com/ryomuk/TangNanoDCJ11MEM)
 ![](images/DCJ11MEM.jpg)
 - DEC DCJ11 (PDP-11の命令セットを持つCPU)のメモリシステムとUARTです。
@@ -126,3 +130,4 @@ TangNano20K、pin75以外にも若干癖のあるpinがあるのでメモして�
 - 2024/08/05: TangNano8008MEM 公開
 - 2024/08/18: TangNano8008MEM用のsoftwareにVTL-8008を追加
 - 2024/08/28: TangNano8008MEMにPCB rev1.0を追加
+- 2024/09/08: TangNano8080MEM 公開
