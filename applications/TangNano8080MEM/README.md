@@ -28,10 +28,10 @@
 
 ## FPGAに実装したもの
 - プロジェクトは[TangNano8080MEM_project](TangNano8080MEM_project)です．
-- [TangNanoZ80-CPM](../TangNanoZ80-CPM/)をベースにして，2相クロック，8228相当の制御信号の変換を追加しました．
+- [TangNanoZ80MEM-CPM](../TangNanoZ80MEM-CPM/)をベースにして，2相クロック，8228相当の制御信号の変換を追加しました．
 
 ## 起動方法
-- [TangNanoZ80-CPM](../TangNanoZ80-CPM/)と同じ手順で作成したdiskイメージで起動できます．
+- [TangNanoZ80-CPM](../TangNanoZ80MEM-CPM/)と同じ手順で作成したdiskイメージで起動できます．
 
 ## 更新履歴
 - 2024/09/08: 初版公開
