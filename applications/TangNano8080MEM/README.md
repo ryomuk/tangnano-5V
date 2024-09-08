@@ -4,7 +4,8 @@
 - Intel 8080用のメモリシステム，クロック，UART，diskエミュレータです．
 - CP/Mが動きます．
 
-## [PCB rev.1.1](hardware/rev.1.1/)
+## PCB rev.1.1
+- 回路図，ガーバーファイル等は[hardware/rev.1.1](hardware/rev.1.1/)にあります．
 ### BOM
 |Reference          |Qty| Value          |Memo |
 |-------------------|---|----------------|-----|
