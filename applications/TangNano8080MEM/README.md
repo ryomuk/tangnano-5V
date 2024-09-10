@@ -35,7 +35,18 @@
 ## 起動方法
 - [TangNanoZ80-CPM](../TangNanoZ80MEM-CPM/)と同じ手順で作成したdiskイメージで起動できます．
 
-## 参考にした先行事例
+## 動作確認状況
+- 下記CPUで動作CP/Mが起動し，BASICでASCIIART.BASが完走しました．
+  - Intel C8080A，P8080A-1
+  - NEC uPD8080A, uPD8080AF，uPD753(+変換基板)
+  - 三菱M58710S(8080A)
+  - AMD AM9080ADC(C8080A)、AM9080ADCB
+## 既知の問題
+- 下記CPUで動作しないので原因調査中です．
+  - NS INS8080AN
+  - TI TMS8080ANL
+
+## 参考にした先行事例等
 - [satoshiokue/MEZ8080](https://github.com/satoshiokue/MEZ8080)
 - [satoshiokue/EMUZ80-8080](https://github.com/satoshiokue/EMUZ80-8080)
 - [Gazelle8087/EMUZ80-8080G](https://github.com/Gazelle8087/EMUZ80-8080G)
