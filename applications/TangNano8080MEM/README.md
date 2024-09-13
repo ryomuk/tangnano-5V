@@ -60,7 +60,7 @@ top.v で下記の1つを選択して下さい．
   - Intel C8080A
 ![](images/c8080a.jpg)
   - Intel P8080A-1 (3MHz)
-![](images/p8080c-1_3MHz.jpg)
+![](images/p8080a-1_3MHz.jpg)
   - NEC uPD8080A
 ![](images/upd8080a.jpg)
   - NEC uPD8080AF
