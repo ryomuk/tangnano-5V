@@ -1,5 +1,5 @@
 # TangNano8080MEM
-![](../../images/tangnano8080mem.jpg)
+![](images/tangnano8080mem.jpg)
 ## 概要
 - Intel 8080用のメモリシステム，クロック，UART，diskエミュレータです．
 - CP/Mが動きます．
@@ -42,9 +42,10 @@
   - 三菱M58710S(8080A)
   - AMD AM9080ADC(C8080A)、AM9080ADCB
 ## 既知の問題
-- 下記CPUで動作しないので原因調査中です．
-  - NS INS8080AN
-  - TI TMS8080ANL
+- ~~下記CPUで動作しないので原因調査中です．~~
+  - ~~NS INS8080AN~~
+  - ~~TI TMS8080ANL~~
+  - メモリ書き込みのタイミングを修正して解決
 
 ## 参考にした先行事例等
 - [satoshiokue/MEZ8080](https://github.com/satoshiokue/MEZ8080)
@@ -54,4 +55,5 @@
 
 ## 更新履歴
 - 2024/09/08: 初版公開
+- 2024/09/13: メモリライトタイミング修正，3MHz対応
 

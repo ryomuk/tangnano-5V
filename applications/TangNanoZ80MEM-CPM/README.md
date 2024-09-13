@@ -1,5 +1,5 @@
 # TangNanoZ80MEM-CPM
-![](../../images/z80cpm.jpg)
+![](images/z80cpm.jpg)
 
 - TangNanoZ80MEMにfloppy/hard diskエミュレータを追加してCP/Mを動作させる試みです．
 - TangNano20Kのスロットに搭載したSDメモリカードを使用してfloppy/hard diskをエミュレートします．
@@ -45,7 +45,7 @@ status = 01H;
 ## とりあえず動かすための手順
 ### ジャンパ配線
 - DBG_TRG を BUSREQ_n に接続します．
-![](../../images/z80cpm_jumper.jpg)
+![](images/z80cpm_jumper.jpg)
 
 ### disk imageの準備
 - z80packのcpm22のbiosにパッチをあててmakeしたものを使ってdrivea.dskを作り，drive.b.dskとつなげて sd.dskを作成します．
@@ -93,13 +93,13 @@ sudo if=sd.dsk of=/dev/sdb
 - [www.retroarchive.org/cpm](http://www.retroarchive.org/cpm/)にあったmbasic.com を，z80packのシミュレーターにファイルを転送してdisk imageを作って実機で実行してみました．
 
 - MBASIC(BASIC-80 Rev.5.21)
-![](../../images/z80cpm_basic.png)
+![](images/z80cpm_basic.png)
 
 - MBASICでASCIIART.BAS
-![](../../images/z80cpm_aa.png)
+![](images/z80cpm_aa.png)
 
 - SUPER STARTREK
-![](../../images/z80cpm_startrek.png)
+![](images/z80cpm_startrek.png)
 
 ## 動画
 - [TangNanoZ80MEM-CPM でStarTrek](https://www.youtube.com/watch?v=MoRSxTNyhwA)
