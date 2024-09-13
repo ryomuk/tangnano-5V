@@ -60,24 +60,34 @@ top.v で下記の1つを選択して下さい．
 
 #### Intel C8080A
 <img src="images/c8080a.jpg" width="320">
+
 #### Intel P8080A-1 (3MHz)
 <img src="images/p8080a-1_3MHz.jpg" width="320">
+
 #### NEC uPD8080A
 <img src="images/upd8080a.jpg" width="320">
+
 #### NEC uPD8080AF
 <img src="images/upd8080af.jpg" width="320">
+
 #### NEC uPD8080AFC-1 (3MHz)
 <img src="images/upd8080afc-1_3MHz.jpg" width="320">
+
 #### NEC uPD753(+変換基板)
 <img src="images/upd753.jpg" width="320">
+
 #### 三菱M58710S(8080A)
 <img src="images/m58710s.jpg" width="320">
+
 #### AMD AM9080ADC(C8080A)
 <img src="images/am9080adc.jpg" width="320">
+
 #### AMD AM9080ADCB
 <img src="images/am9080adcb.jpg" width="320">
+
 #### NS INS8080AN
 <img src="images/ins8080an.jpg" width="320">
+
 #### TI TMS8080ANL
 <img src="images/tms8080anl.jpg" width="320">
 
