@@ -57,13 +57,32 @@ top.v で下記の1つを選択して下さい．
 
 ## 動作確認状況
 - 下記CPUで動作CP/Mが起動し，BASICでASCIIART.BASが完走しました．
-  - Intel C8080A，P8080A-1
-  - NEC uPD8080A, uPD8080AF，uPD753(+変換基板)
-  - 三菱M58710S(8080A)
-  - AMD AM9080ADC(C8080A)、AM9080ADCB
+Intel C8080A
+![](images/c8080a.jpg)
+Intel P8080A-1 (3MHz)
+![](images/p8080c-1_3MHz.jpg)
+NEC uPD8080A
+![](images/upd8080a.jpg)
+NEC uPD8080AF
+![](images/upd8080af.jpg)
+NEC uPD8080AFC-1 (3MHz)
+![](images/upd8080afc-1_3MHz.jpg)
+NEC uPD753(+変換基板)
+![](images/upd753.jpg)
+三菱M58710S(8080A)
+![](images/m58710s.jpg)
+AMD AM9080ADC(C8080A)
+![](images/am9080adc.jpg)
+AMD AM9080ADCB
+![](images/am9080adcb.jpg)
+NS INS8080AN
+![](images/ins8080an.jpg)
+TI TMS8080ANL
+![](images/tms8080anl.jpg)
+
 ## 既知の問題
 - ~~下記CPUで動作しないので原因調査中です．~~
-  - ~~NS INS8080AN~~
+  - ~~NS INS8080AN, TI TMS8080ANL~~
   - メモリ書き込みのタイミングを修正して解決しました．
 
 ## 参考にした先行事例，関連サイト等
