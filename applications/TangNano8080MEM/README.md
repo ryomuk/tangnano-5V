@@ -57,27 +57,27 @@ top.v で下記の1つを選択して下さい．
 
 ## 動作確認状況
 - 下記CPUで動作CP/Mが起動し，BASICでASCIIART.BASが完走しました．
-Intel C8080A
+  - Intel C8080A
 ![](images/c8080a.jpg)
-Intel P8080A-1 (3MHz)
+  - Intel P8080A-1 (3MHz)
 ![](images/p8080c-1_3MHz.jpg)
-NEC uPD8080A
+  - NEC uPD8080A
 ![](images/upd8080a.jpg)
-NEC uPD8080AF
+  - NEC uPD8080AF
 ![](images/upd8080af.jpg)
-NEC uPD8080AFC-1 (3MHz)
+  - NEC uPD8080AFC-1 (3MHz)
 ![](images/upd8080afc-1_3MHz.jpg)
-NEC uPD753(+変換基板)
+  - NEC uPD753(+変換基板)
 ![](images/upd753.jpg)
-三菱M58710S(8080A)
+  - 三菱M58710S(8080A)
 ![](images/m58710s.jpg)
-AMD AM9080ADC(C8080A)
+  - AMD AM9080ADC(C8080A)
 ![](images/am9080adc.jpg)
-AMD AM9080ADCB
+  - AMD AM9080ADCB
 ![](images/am9080adcb.jpg)
-NS INS8080AN
+  - NS INS8080AN
 ![](images/ins8080an.jpg)
-TI TMS8080ANL
+  - TI TMS8080ANL
 ![](images/tms8080anl.jpg)
 
 ## 既知の問題
