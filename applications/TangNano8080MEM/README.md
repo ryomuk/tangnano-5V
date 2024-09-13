@@ -2,7 +2,7 @@
 ![](images/tangnano8080mem.jpg)
 ## 概要
 - Intel 8080用のメモリシステム，クロック，UART，diskエミュレータです．
-- CP/Mが動きます．
+- Universal Monitor や CP/Mが動きます．
 
 ## PCB rev.1.1
 - 回路図，ガーバーファイル等は[hardware/rev.1.1](hardware/rev.1.1/)にあります．
@@ -32,7 +32,27 @@
 - プロジェクトは[TangNano8080MEM_project](TangNano8080MEM_project)です．
 - [TangNanoZ80MEM-CPM](../TangNanoZ80MEM-CPM/)をベースにして，2相クロック，8228相当の制御信号の変換を追加しました．
 
-## 起動方法
+## クロックの設定
+top.v で下記の1つを選択して下さい．
+```
+// select one of the following CLK frequency
+//`define  CLK_3MHz     // 3.0MHz(333ns)
+`define  CLK_2MHz   // 2.077MHz( 481ns)
+//`define  CLK_1MHz   // 1.038MHz( 963ns)
+//`define  CLK_500kHz // 519.2KHz(1930ns)
+```
+
+## ROMの選択
+- top.v で下記の1つを選択して下さい．
+```
+// select one of the following 2 applications
+`define USE_CPM
+//`define USE_UNIMON
+
+```
+このオプションで，rom.vでincludeするファイル，UART用レジスタのビットフィールドを切り替えています．
+
+## CP/Mの起動方法
 - [TangNanoZ80-CPM](../TangNanoZ80MEM-CPM/)と同じ手順で作成したdiskイメージで起動できます．
 
 ## 動作確認状況
@@ -44,14 +64,14 @@
 ## 既知の問題
 - ~~下記CPUで動作しないので原因調査中です．~~
   - ~~NS INS8080AN~~
-  - ~~TI TMS8080ANL~~
-  - メモリ書き込みのタイミングを修正して解決
+  - メモリ書き込みのタイミングを修正して解決しました．
 
-## 参考にした先行事例等
+## 参考にした先行事例，関連サイト等
 - [satoshiokue/MEZ8080](https://github.com/satoshiokue/MEZ8080)
 - [satoshiokue/EMUZ80-8080](https://github.com/satoshiokue/EMUZ80-8080)
 - [Gazelle8087/EMUZ80-8080G](https://github.com/Gazelle8087/EMUZ80-8080G)
 - [電脳伝説/SBC8080](https://vintagechips.wordpress.com/2018/06/24/sbc8080-cpu%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)
+- [Electrelic/Universal Monitor](https://electrelic.com/electrelic/node/1317)
 
 ## 更新履歴
 - 2024/09/08: 初版公開
