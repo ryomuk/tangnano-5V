@@ -29,7 +29,6 @@
 - RN2は当初10KΩにしていたのですが，TangNano20Kのpin75はB616_BOOTに継がっていて，起動時にUSBを検出してくれなくなってしまうので100kΩに変更しました．[TangNano6809MEM](../TangNano6809MEM)で起きていたのと同様の問題でした．
 
 ## FPGAに実装したもの
-- プロジェクトは[TangNano8080MEM_project](TangNano8080MEM_project)です．
 - [TangNanoZ80MEM-CPM](../TangNanoZ80MEM-CPM/)をベースにして，2相クロック，8228相当の制御信号の変換を追加しました．
 
 ## クロックの設定
