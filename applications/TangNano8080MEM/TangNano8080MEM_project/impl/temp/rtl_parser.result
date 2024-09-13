@@ -1,15 +1,15 @@
 [
  {
   "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/top.v",
-  "InstLine" : 24,
+  "InstLine" : 48,
   "InstName" : "top",
   "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/top.v",
-  "ModuleLine" : 24,
+  "ModuleLine" : 48,
   "ModuleName" : "top",
   "SubInsts" : [
    {
     "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/top.v",
-    "InstLine" : 391,
+    "InstLine" : 443,
     "InstName" : "uart_rx_inst",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/uart.v",
     "ModuleLine" : 151,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/top.v",
-    "InstLine" : 405,
+    "InstLine" : 457,
     "InstName" : "uart_tx_inst",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/uart.v",
     "ModuleLine" : 18,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/top.v",
-    "InstLine" : 434,
+    "InstLine" : 486,
     "InstName" : "sdhd_cpm_inst",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/sdhd_cpm.v",
     "ModuleLine" : 13,
@@ -33,7 +33,7 @@
    },
    {
     "InstFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/top.v",
-    "InstLine" : 471,
+    "InstLine" : 523,
     "InstName" : "onboard_rgb_led",
     "ModuleFile" : "C:/wks/ework/FPGA/TangNano/20k/TangNano8080MEM/TangNano8080MEM_project/src/ws2812.v",
     "ModuleLine" : 5,

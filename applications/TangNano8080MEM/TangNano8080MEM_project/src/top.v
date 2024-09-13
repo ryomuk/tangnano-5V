@@ -19,7 +19,31 @@
 //  - implemented some features for CP/M
 // 2024/09/08
 //  - ported from Z80 Memory for CP/M and 8008MEM
+// 2024/09/13
+//  - modified status decoding style Z80 to 8080
+//  - modified memory write timing
 //---------------------------------------------------------------------------
+
+// select one of the following 2 applications
+`define USE_CPM
+//`define USE_UNIMON
+
+// select one of the following CLK frequency
+//`define  CLK_3MHz     // 3.0MHz(333ns)
+`define  CLK_2MHz   // 2.077MHz( 481ns)
+//`define  CLK_1MHz   // 1.038MHz( 963ns)
+//`define  CLK_500kHz // 519.2KHz(1930ns)
+
+// for CP/M
+`ifdef  USE_CPM
+ `define UART_CPM
+ `define USE_IPL
+`endif
+
+// for universal monitor
+`ifdef  USE_UNIMON
+ `define UART_8251
+`endif
 
 module top(
     input	 sw1,
@@ -85,17 +109,16 @@ module top(
   parameter FDCOP_WRITE = 8'h01;
   parameter FDCST_ERROR = 8'h01;
 
+`ifdef UART_CPM
 // for unimon z80 and CP/M Z80
   wire [7:0] REG_CONSTA = {5'b00000, tx_ready, 1'b0, rx_data_ready};
+`elsif UART_8251
 // for unimon 8251 and SBC8080
-//  wire [7:0] REG_CONSTA = {6'b000000, rx_data_ready, tx_ready};
+  wire [7:0] REG_CONSTA = {6'b000000, rx_data_ready, tx_ready};
+`endif
 
   wire [7:0] REG_CONDAT = rx_data;
 
-//  reg [7:0] rx_data_latched;
-//  always @(posedge cpu_read_io)
-//  rx_data_latched = rx_data_ready ? rx_data : 8'hff;
-  
   reg [7:0] REG_FDCD;
   reg [7:0] REG_FDCT;
   reg [7:0] REG_FDCS;
@@ -106,7 +129,7 @@ module top(
   
   reg [7:0]	 mem[65535:0];
   reg [15:0]	 address; // address or data of memory should be latched to infer BSRAM
-  reg [7:0]	 io_addr;
+  wire [7:0]	 io_addr;
   wire [7:0]	 io_data;
 
   wire		 BUSREQ_n;
@@ -121,32 +144,52 @@ module top(
 //---------------------------------------------------------------------------
 // clock for 8080
 //---------------------------------------------------------------------------
-  reg [1:0] clk_cnt = 0;
+`ifdef CLK_3MHz
+  wire	    mother_clk = sys_clk;
+  parameter  clk1_table = 9'b110000000;
+  parameter  clk2_table = 9'b000111100;
+  parameter  MSB_CLK    = 8;
+`else
+  parameter  clk1_table = 13'b1110000000000;
+  parameter  clk2_table = 13'b0001111111000;
+  parameter  MSB_CLK    = 12;
+  reg [1:0]  clk_cnt = 0;
   always @(posedge sys_clk)
     clk_cnt <= clk_cnt + 1'b1;
-    
-  wire	    mother_clk = sys_clk;    // for 2.077MHz( 481ns)
-//  wire	    mother_clk = clk_cnt[0]; // for 1.038MHz( 963ns)
-//  wire	    mother_clk = clk_cnt[1]; // for 519.2KHz(1930ns)
+`endif // CLK_3MHz
 
-//                                      111
-//                            0123456789012
-  parameter  clk1_table = 13'b1100000000000;
-  parameter  clk2_table = 13'b0001111111000;
-  reg [12:0] clk1_reg;
-  reg [12:0] clk2_reg;
+`ifdef CLK_2MHz
+  wire	     mother_clk = sys_clk;
+`elsif CLK_1MHz
+  wire	     mother_clk = clk_cnt[0];
+`elsif CLK_500kHz
+  wire	     mother_clk = clk_cnt[1];
+`endif // CLK_2MHz or CLK_1MHz or CLK_500kHz
+
+
+  reg [MSB_CLK:0] clk1_reg;
+  reg [MSB_CLK:0] clk2_reg;
   assign CLK1 = clk1_reg[0];
   assign CLK2 = clk2_reg[0];
   always @(posedge mother_clk)
-    if( negedge_RESET_n | (clk1_reg == 13'b0)) begin
+    if( negedge_RESET_n | (clk1_reg == 0)) begin
        clk1_reg <= clk1_table;
        clk2_reg <= clk2_table;
     end
     else begin
-       clk1_reg[12:0] <= {clk1_reg[11:0], clk1_reg[12]};
-       clk2_reg[12:0] <= {clk2_reg[11:0], clk2_reg[12]};
+       clk1_reg[MSB_CLK:0] <= {clk1_reg[(MSB_CLK-1):0], clk1_reg[MSB_CLK]};
+       clk2_reg[MSB_CLK:0] <= {clk2_reg[(MSB_CLK-1):0], clk2_reg[MSB_CLK]};
     end
 
+  // To compensate for delay by external clock driver
+  reg CLK1_d; // delayed CLK1
+  reg CLK2_d; // delayed CLK2
+//  always @(posedge sys_clk) begin
+  always @(posedge sys_clk) begin
+     CLK1_d <= CLK1;
+     CLK2_d <= CLK2;
+  end
+  
   wire negedge_RESET_n = last_RESET_n & ~RESET_n;
   reg  last_RESET_n = 1'b1;
   always @(posedge mother_clk)
@@ -194,8 +237,11 @@ module top(
   reg [8:0]  ipl_cnt = 0;
   wire [15:0] ipl_address = {8'h00, ipl_cnt[7:0]};
   reg	      load_ipl;
+`ifdef USE_IPL
   parameter   IPL_WIDTH = 256;
-//  parameter   IPL_WIDTH = 0; // for debug
+`else
+  parameter   IPL_WIDTH = 0;
+`endif
   always @(posedge sys_clk)
     if( sw2 )
       {ipl_cnt, load_ipl} <= 0;
@@ -207,43 +253,47 @@ module top(
       load_ipl <= 0;
       
 //---------------------------------------------------------------------------
-// translate bus control signals of 8080 to Z80
+// decode status word (8228)
 //---------------------------------------------------------------------------
-//    input	 SYNC,
-//    input	 DBIN,
-//    input	 WR_n,
-//    input	 HLDA,
-//---------------------------------------------------------------------------
+  reg [7:0] state;
+  always @(posedge CLK1_d)
+    if( SYNC )
+      state[7:0] <= D[7:0];
+
   // status information
-  reg INTA;
-  reg WO_n;
-  reg STACK;
-  reg HLTA;
-  reg OUT;
-  reg M1;
-  reg INP;
-  reg MEMR; 
-  
-  wire IORQ_n = ~(INP | OUT);
-  wire MREQ_n = ~MEMR;
-  wire RD_n   = ~DBIN;
+  parameter S1  = 8'b1010_0010; // Instruction fetch
+  parameter S2  = 8'b1000_0010; // Memory Read
+  parameter S3  = 8'b0000_0000; // Memory Write
+  parameter S4  = 8'b1000_0110; // Stack Read
+  parameter S5  = 8'b0000_0100; // Stack Write
+  parameter S6  = 8'b0100_0010; // Input Read
+  parameter S7  = 8'b0001_0000; // Output Write
+  parameter S8  = 8'b0010_0011; // Interrupt Acknowledge
+  parameter S9  = 8'b1000_1010; // Halt Acknowledge
+  parameter S10 = 8'b0010_1011; // Interrupt Ack while HALT
 
-  assign HOLD = ~BUSREQ_n;
-  always @(posedge CLK1)
-    if( SYNC ) begin
-       {MEMR, INP, M1, OUT, HLTA, STACK, WO_n, INTA} <= D[7:0];
-       address <= A;
-    end
-
-  always @(negedge CLK1)
-    if( SYNC & ~IORQ_n )
-      io_addr <= A[7:0];
+  wire MEMR = ((state == S1) | (state == S2) | (state == S4)) & DBIN;
+  wire MEMW = ((state == S3) | (state == S5)) & ~WR_n;
+  wire IOR  = (state == S6) & DBIN;
+  wire IOW  = (state == S7) & ~WR_n;
+  wire INTA = (state == S8) | (state == S10);
+  wire MEMR_n = ~MEMR;
+  wire MEMW_n = ~MEMW;
+  wire IOR_n  = ~IOR;
+  wire IOW_n  = ~IOW;
+  wire INTA_n = ~INTA;
   
 //---------------------------------------------------------------------------
 // Memory and IO
 //---------------------------------------------------------------------------
-  assign D = (~MREQ_n & ~RD_n) ? d_ram_to_cpu :
-	     (~IORQ_n & ~RD_n) ? io_data      :
+  always @(posedge CLK1_d)
+    address <= A;
+  assign io_addr = address[7:0];
+
+  assign HOLD = ~BUSREQ_n; // for DMA
+
+  assign D = MEMR ? d_ram_to_cpu :
+	     IOR  ? io_data      :
 	     8'bzzzz_zzzz;
   
   assign io_data = (io_addr == IOADDR_CONDAT) ? REG_CONDAT :
@@ -262,9 +312,10 @@ module top(
 //  always @(negedge MREQ_n)
 //    address <= A;
 
-  wire cpu_write_mem =  IORQ_n & ~WR_n;
-  wire cpu_write_io  = ~IORQ_n & ~WR_n;
-  wire cpu_read_io   = ~IORQ_n & ~RD_n;
+//  wire cpu_write_mem = MEMW;
+  wire cpu_write_mem = MEMW & CLK2_d; // workaround for TI and NS's 8080
+  wire cpu_write_io  = IOW;
+  wire cpu_read_io   = IOR;
        
 //  always @(posedge cpu_write_mem)
 //    mem[address] <= D;
@@ -303,7 +354,7 @@ module top(
 //    io_addr <= A[7:0];
 
 // UART SEND
-  always @(posedge CLK2)
+  always @(posedge CLK2_d)
     if(cpu_write_io  & (io_addr == IOADDR_CONDAT)) begin
        tx_data <= D;
        tx_send <= 1'b1;
@@ -312,7 +363,7 @@ module top(
       tx_send <= 1'b0;
 
   // clear rx_ready
-  always @(posedge CLK2)
+  always @(posedge CLK2_d)
     if(cpu_read_io & (io_addr == IOADDR_CONDAT))
       rx_clear <= 1;
     else if(rx_data_ready == 1'b0)
@@ -352,7 +403,7 @@ module top(
   assign dma_start_address[15:0]  = {REG_DMAH[7:0], REG_DMAL[7:0]};
   
   assign BUSREQ_n = disk_ready;
-  always @(posedge CLK1)
+  always @(posedge CLK1_d)
     if( disk_busy ) begin
        disk_read  <= 0;
        disk_write <= 0;
@@ -376,9 +427,10 @@ module top(
 // Interrupt
 //---------------------------------------------------------------------------
   // not implemented yet
- assign INT = 0;
+  assign INT = 0;
 // for debug
 //  assign INT = sw2 ? dbg_tx2: dbg_tx;
+//  assign INT = CLK1_d;
 //  assign INT = ~WR_n;
   
 //---------------------------------------------------------------------------
@@ -489,7 +541,7 @@ module top(
     end else 
       cnt_250ms <= cnt_250ms + 1'b1;
 
-  always @(posedge CLK1)
+  always @(posedge CLK1_d)
     if(~RESET_n)
       {LED_R, LED_G, LED_B} <= 24'h00_00_00;
     else begin
@@ -500,7 +552,7 @@ module top(
 		 ~sd_miso ? 8'h20:
 		 8'h00;
        LED_B <= clk_1Hz ? 8'h10:
-		HLDA ? 8'h10:
+//		HLDA ? 8'h10:
 		8'h00;
     end
 `endif
@@ -518,8 +570,9 @@ module top(
   
   always @(posedge sys_clk)
     if(negedge_SYNC) begin
-       dbg_tx_data <= tx_data;
-       dbg_tx_data2 <= {MEMR, INP, M1, OUT, HLTA, STACK, WO_n, INTA};
+//       dbg_tx_data <= A[7:0];
+       dbg_tx_data  <= state;
+       dbg_tx_data2 <= tx_data;
        dbg_tx_send <= 1'b1;
        dbg_tx_send2<= 1'b1;
     end
