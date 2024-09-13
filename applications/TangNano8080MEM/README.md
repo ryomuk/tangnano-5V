@@ -58,7 +58,7 @@ top.v で下記の1つを選択して下さい．
 ## 動作確認状況
 - 下記CPUで動作CP/Mが起動し，BASICでASCIIART.BASが完走しました．
   - Intel C8080A
-![](images/c8080a.jpg)
+<img src="images/c8080a.jpg" width=320>
   - Intel P8080A-1 (3MHz)
 ![](images/p8080a-1_3MHz.jpg)
   - NEC uPD8080A
